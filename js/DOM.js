@@ -96,9 +96,13 @@ function move(e) {
 
 // Character Motion
 
+//  Access Player Posioon
+
 function moveRight() {
     var currentPositionR = getPosition();
     var newPositionR = currentPositionR[0] + 3.1 - 8;
+    // check if collision
+    player.style.transform = `translateX(${currentPositionR[0]})`;
     player.style.transform = `translateX(${newPositionR}px`;
     console.log(getPosition());
 };
@@ -106,7 +110,10 @@ function moveRight() {
 function moveLeft() {
     var currentPositionL = getPosition();
     var newPositionL = currentPositionL[0] - 3.1 - 8;
+    //check if collision
+    player.style.transform = `translateX(${currentPositionL[0]})`;
     player.style.transform = `translateX(${newPositionL}px`;
+    
 };
 
 
@@ -114,19 +121,20 @@ function jump() {
     console.log('jumping');
     var currentPositionJ = getPosition();
     console.log(currentPositionJ);
-    var newPositionJ = currentPositionJ[1] - 533 - 27;
-    player.style.transform = `translateY(${newPositionJ}px`;
+    var newPositionJ = currentPositionJ[1] - 588 - 40;
     player.style.transform = `translateX(${currentPositionJ[0]})`;
+    player.style.transform = `translateY(${newPositionJ}px`;
+    
     // check if collision
+    // if yes go down
     // if yes, stop here.
     // if not, got down
 }; 
 
 function getPosition() {
-    var playerPosition = player.getBoundingClientRect(
-    );
-     var x = playerPosition.x;
-     var y = playerPosition.y;
+    var playerPosition = document.getElementById('player').getBoundingClientRect();
+    var x = playerPosition.x;
+    var y = playerPosition.y;
     return [x, y];
 };
 
