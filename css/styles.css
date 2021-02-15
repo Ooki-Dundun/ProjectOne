@@ -1,0 +1,60 @@
+#map-container {
+    background: red;
+    width: 500px;
+    height: 600px;
+    box-sizing: border-box;
+    position: relative;
+
+}
+
+#player {
+    background: yellow;
+    border: 1px solid black;
+    width: 15px;
+    height: 20px;
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 50;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+#move-right {
+    
+}
+
+#move-left {
+    
+}
+
+#jump { 
+    
+}
+
+
+
+.map-square {
+    box-sizing: border-box;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    background: blue;
+    float: left;
+}
+
+.map-block {
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    background: black;
+    float: left;
+}
+
+#bottom {
+    width: 500px;
+    height: 20px;
+    background: red;
+}
