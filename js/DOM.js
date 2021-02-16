@@ -69,6 +69,8 @@ mapJS.forEach(n => n.forEach(e => {
     if (typeof e === 'number') { map.innerHTML += `<div class="map-square"></div>`}
     if (e === 'b') { map.innerHTML += `<div class="map-block" id="${e}"></div>`}
     if (e === 'o') {map.innerHTML += `<div class="map-o" id="${e}"></div>`}
+    if (e === 'ts') {map.innerHTML += `<div class="map-ts" id="${e}"></div>`}
+    if (e === 'te') {map.innerHTML += `<div class="map-te" id="${e}"></div>`}
     }));
 
 //access player div
@@ -76,6 +78,7 @@ var player = document.getElementById('player');
 var initialPosition = player.getBoundingClientRect();
 var initialX = initialPosition.x;
 var initialY = initialPosition.y;
+
 
 // Event Listeners For Character Motion
 
@@ -89,8 +92,11 @@ function move(e) {
     if (e.key === 'c' ) {
         moveLeft();
     } 
-    if (e.key=== 'n') {
+    if (e.key === 'n') {
         moveRight();
+    }
+    if (e.key === 'f') {
+        fall();
     }
 }
 
@@ -99,15 +105,17 @@ function move(e) {
 //  Access Player Posioon
 
 function moveRight() {
-    var currentPositionR = getPosition();
+    var currentPositionR = getPosition('player');
     var translateXR = currentPositionR[0] + 25 - initialX;
     var translateYR = currentPositionR[1] - initialY;
     //check if collision
+        // on the edge of the map
+        // with a block
     player.style.transform = `translate(${translateXR}px, ${translateYR}px)`;
 };
 
 function moveLeft() {
-    var currentPositionL = getPosition();
+    var currentPositionL = getPosition('player');
     var translateXL = currentPositionL[0] - 25 - initialX;
     var translateYL = currentPositionL[1] - initialY;
     //check if collision
@@ -118,10 +126,11 @@ function moveLeft() {
 
 
 function jump() {
-    var currentPositionJ = getPosition();
+    var currentPositionJ = getPosition('player');
     var translateYJ = currentPositionJ[1] - 40 - initialY;
     var translateXJ = currentPositionJ[0] - initialX;
     player.style.transform = `translate(${translateXJ}px, ${translateYJ}px)`;
+    player.style.transitionDuration = '1s';
     
     // check if collision
     // if yes go down
@@ -129,21 +138,23 @@ function jump() {
     // if not, got down
 }; 
 
-function getPosition() {
-    var playerPosition = document.getElementById('player').getBoundingClientRect();
-    var x = playerPosition.x;
-    var y = playerPosition.y;
+function fall() {
+    var currentPositionF = getPosition('player');
+    var translateYJ = currentPositionF[1] + 40 - initialY;
+    var translateXJ = currentPositionF[0] - initialX;
+    player.style.transform = `translate(${translateXJ}px, ${translateYJ}px)`;
+    player.style.transitionDuration = '1s';
+}
+
+function getPosition(elem) {
+    var elemPosition = document.getElementById(`${elem}`).getBoundingClientRect();
+    var x = elemPosition.x;
+    var y = elemPosition.y;
     return [x, y];
 };
 
-console.log(getPosition());
-
-function fall() {
-
-}
-
 function isColliding() {
-    
+    var playerPosition = getPosition('player');
 }
 
 // set interval
