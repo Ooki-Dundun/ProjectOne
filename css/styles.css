@@ -1,6 +1,7 @@
 #map-container {
     background: red;
     width: 500px;
+    max-height: 100vh;
     height: 600px;
     box-sizing: border-box;
     position: relative;

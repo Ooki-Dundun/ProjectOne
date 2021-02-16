@@ -79,6 +79,7 @@ var initialPosition = player.getBoundingClientRect();
 var initialX = initialPosition.x;
 var initialY = initialPosition.y;
 var isJumping = false;
+var isFalling = false;
 
 
 // Event Listeners For Character Motion
@@ -96,25 +97,12 @@ function move(e) {
     if (e.key === 'b') {
         moveRight();
     }
-    if (e.key === 'f') {
-        fall();
-    }
     if (e.key === 'c') {
         jumpLeft();
-        var timeoutIDML = setTimeout(moveJLeft, 900);
-        var timeoutIDFL = setTimeout(fallLeft, 1200);
     }
     if (e.key === 'n') {
         jumpRight();
-        var timeoutIDMR = setTimeout(moveJRight, 900);
-        var timeoutIDFR = setTimeout(fallRight, 1200);
     } 
-    if (e.key === 'x') {
-        fallLeft();
-    }
-    if (e.key === 'm') {
-        fallRight();
-    }
 }
 
 // Character Motion
@@ -123,22 +111,23 @@ function move(e) {
 
 function moveRight() {
     if (isJumping) {
+        console.log('cannot move right while jumping or falling');
         return;
     }
     var currentPositionR = getPosition('player');
     var translateXR = currentPositionR[0] + 25 - initialX;
     var translateYR = currentPositionR[1] - initialY;
     //check if collision
-        // on the edge of the map
-        // with a block
+    // on the edge of the map
+    // with a block
     player.style.transform = `translate(${translateXR}px, ${translateYR}px)`;
     player.style.transitionTimingFunction = 'linear';
-    player.style.transitionDuration = '0.3s';
-
+    player.style.transitionDuration = '0.2s';
 };
 
 function moveLeft() {
     if (isJumping) {
+        console.log('cannot move left while jumping or falling');
         return;
     }
     var currentPositionL = getPosition('player');
@@ -147,12 +136,13 @@ function moveLeft() {
     //check if collision
     player.style.transform = `translate(${translateXL}px, ${translateYL}px)`;
     player.style.transitionTimingFunction = 'linear'; 
-    player.style.transitionDuration = '0.3s';
+    player.style.transitionDuration = '0.2s';
 };
 
 
 function jump() {
-    if (isJumping) {
+    if (isJumping || isFalling) {
+        console.log('cannot double jump or jump while falling');
         return;
     }
     isJumping = true;
@@ -160,9 +150,10 @@ function jump() {
     var translateYJ = currentPositionJ[1] - 40 - initialY;
     var translateXJ = currentPositionJ[0] - initialX;
     player.style.transform = `translate(${translateXJ}px, ${translateYJ}px)`;
-    player.style.transitionDuration = '1s';
+    player.style.transitionDuration = '0.8s';
     player.style.transitionTimingFunction = 'ease-out';
-    
+    setTimeout(fall, 800);
+    setTimeout(changeJumpAndFallToFalse, 1300);
     // check if collision
     // if yes go down
     // if yes, stop here.
@@ -170,34 +161,44 @@ function jump() {
 }; 
 
 function fall() {
-    if (!isJumping) {
+    if (isFalling) {
         return;
     }
+    isFalling = true;
     var currentPositionF = getPosition('player');
     var translateYJ = currentPositionF[1] + 40 - initialY;
     var translateXJ = currentPositionF[0] - initialX;
     player.style.transform = `translate(${translateXJ}px, ${translateYJ}px)`;
-    player.style.transitionDuration = '1s';
+    player.style.transitionDuration = '0.5s';
     player.style.transitionTimingFunction = 'ease-in';
 }
 
+function changeJumpAndFallToFalse() {
+    isJumping = false;
+    isFalling = false;
+}
+
 function jumpRight() {
-    if (isJumping) {
+    if (isJumping || isFalling) {
+        console.log('cannot double jump or jump while falling');
         return;
     }
     isJumping = true;
     var currentPositionJR = getPosition('player');
     var translateYJR = currentPositionJR[1] - 40 - initialY;
-    var translateXJR = currentPositionJR[0] + 35 - initialX;
+    var translateXJR = currentPositionJR[0] + 50 - initialX;
     player.style.transform = `translate(${translateXJR}px, ${translateYJR}px)`;
-    player.style.transitionDuration = '1s';
+    player.style.transitionDuration = '0.7s';
     player.style.transitionTimingFunction = 'ease-out';
+    setTimeout(moveJRight, 600);
+    setTimeout(fallRight, 750);
+    setTimeout(changeJumpAndFallToFalse, 1400);
 }
 
 function moveJRight() {
     var currentPositionMJR = getPosition('player');
     var translateYMJR = currentPositionMJR[1] - initialY;
-    var translateXMJR = currentPositionMJR[0] + 3 - initialX;
+    var translateXMJR = currentPositionMJR[0] + 9 - initialX;
     player.style.transform = `translate(${translateXMJR}px, ${translateYMJR}px)`;
     player.style.transitionDuration = '0.2s';
     player.style.transitionTimingFunction = 'linear';
@@ -206,43 +207,44 @@ function moveJRight() {
 function fallRight() {
     var currentPositionFR = getPosition('player');
     var translateYFR = currentPositionFR[1] + 40 - initialY;
-    var translateXFR = currentPositionFR[0] + 35 - initialX;
+    var translateXFR = currentPositionFR[0] + 30 - initialX;
     player.style.transform = `translate(${translateXFR}px, ${translateYFR}px)`;
-    player.style.transitionDuration = '1s';
+    player.style.transitionDuration = '0.4s';
     player.style.transitionTimingFunction = 'ease-in';
 }
 
 function jumpLeft() {
-    if (isJumping) {
+    if (isJumping || isFalling) {
+        console.log('cannot double jump or jump while falling');
         return;
     }
     isJumping = true;
     var currentPositionJL = getPosition('player');
     var translateYJL = currentPositionJL[1] - 40 - initialY;
-    var translateXJL = currentPositionJL[0] - 35 - initialX;
+    var translateXJL = currentPositionJL[0] - 50 - initialX;
     player.style.transform = `translate(${translateXJL}px, ${translateYJL}px)`;
-    player.style.transitionDuration = '1s';
+    player.style.transitionDuration = '0.7s';
     player.style.transitionTimingFunction = 'ease-out';
+    setTimeout(moveJLeft, 600);
+    setTimeout(fallLeft, 750);
+    setTimeout(changeJumpAndFallToFalse, 1400);
 }
 
 function moveJLeft() {
     var currentPositionMJL = getPosition('player');
     var translateYMJL = currentPositionMJL[1] - initialY;
-    var translateXMJL = currentPositionMJL[0] - 3 - initialX;
+    var translateXMJL = currentPositionMJL[0] - 9 - initialX;
     player.style.transform = `translate(${translateXMJL}px, ${translateYMJL}px)`;
     player.style.transitionDuration = '0.2s';
     player.style.transitionTimingFunction = 'linear';
 }
 
 function fallLeft() {
-    if (!isJumping) {
-        return;
-    }
     var currentPositionFL = getPosition('player');
     var translateYFL = currentPositionFL[1] + 40 - initialY;
-    var translateXFL = currentPositionFL[0] - 35 - initialX;
+    var translateXFL = currentPositionFL[0] - 30 - initialX;
     player.style.transform = `translate(${translateXFL}px, ${translateYFL}px)`;
-    player.style.transitionDuration = '1s';
+    player.style.transitionDuration = '0.4s';
     player.style.transitionTimingFunction = 'ease-in';
 }
 
