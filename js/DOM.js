@@ -57,7 +57,7 @@ const mapJS = [
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
@@ -68,8 +68,8 @@ const map = document.querySelector("#map-container");
 // insert small square in the HTML for each number in array
 mapJS.forEach(n => n.forEach(e => {
     if (typeof e === 'number') { map.innerHTML += `<div class="map-square"></div>`}
-    if (e === 'b') { map.innerHTML += `<div class="map-block" id="${e}"></div>`}
-    if (e === 'o') {map.innerHTML += `<div class="map-o" id="${e}"></div>`}
+    if (e === 'b') { map.innerHTML += `<div class="map-block"></div>`}
+    if (e === 'o') {map.innerHTML += `<div class="map-o"></div>`}
     if (e === 'ts') {map.innerHTML += `<div class="map-ts" id="${e}"></div>`}
     if (e === 'te') {map.innerHTML += `<div class="map-te" id="${e}"></div>`}
     }));
@@ -79,8 +79,7 @@ mapJS.forEach(n => n.forEach(e => {
 var mapBlocks = document.getElementsByClassName('map-block');
 var mapO = document.getElementsByClassName('map-o');
 var mapTS = document.getElementsByClassName('map-ts');
-var mapTE = document.getElementsByName('map-te');
-console.log(mapTE);
+var mapTE = document.getElementsByClassName('map-te');
 
 
 //Access player div and set important player variables
@@ -100,6 +99,7 @@ function move(e) {
     e = e || window.event
     if (e.key === ' ') {
         jump();
+        isColliding();
     }
     if (e.key === 'v' ) {
         moveLeft();
@@ -184,7 +184,7 @@ function fall() {
 function changeJumpAndFallToFalse() {
     isJumping = false;
     isFalling = false;
-    console.log(player.getBoundingClientRect());
+
 }
 
 function jumpRight() {
@@ -217,7 +217,7 @@ function moveJRight() {
 function fallRight() {
     var currentPositionFR = getPosition('player');
     console.log(`current position when falling is ${currentPositionFR}`);
-    var translateYFR = currentPositionFR[1] + 38.43 - initialY;
+    var translateYFR = currentPositionFR[1] + 38.47 - initialY;
     var translateXFR = currentPositionFR[0] + 30 - initialX;
     player.style.transform = `translate(${translateXFR}px, ${translateYFR}px)`;
     player.style.transitionDuration = '0.4s';
@@ -252,7 +252,7 @@ function moveJLeft() {
 
 function fallLeft() {
     var currentPositionFL = getPosition('player');
-    var translateYFL = currentPositionFL[1] + 38.43 - initialY;
+    var translateYFL = currentPositionFL[1] + 38.47 - initialY;
     var translateXFL = currentPositionFL[0] - 30 - initialX;
     player.style.transform = `translate(${translateXFL}px, ${translateYFL}px)`;
     player.style.transitionDuration = '0.4s';
@@ -268,6 +268,10 @@ function getPosition(elem) {
 
 function isColliding() {
     var playerPosition = getPosition('player');
+    var mapBlocksHere = [...mapBlocks];
+    var mapBlocksPositions = mapBlocksHere.map(n => n.getBoundingClientRect());
+    console.log(playerPosition);
+    console.log(mapBlocksPositions);   
 }
 
 // set interval
