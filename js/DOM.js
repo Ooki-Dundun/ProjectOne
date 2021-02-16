@@ -1,6 +1,6 @@
 //Createn Map
 
-const mapJS = [
+/* const mapJS = [
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12 ,13 ,14 ,15 ,16 ,17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12 ,13 ,14 ,15 ,16 ,17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12 ,13 ,14 ,15 ,16 ,17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
@@ -71,13 +71,14 @@ mapJS.forEach(n => n.forEach(e => {
     if (e === 'o') {map.innerHTML += `<div class="map-o" id="${e}"></div>`}
     if (e === 'ts') {map.innerHTML += `<div class="map-ts" id="${e}"></div>`}
     if (e === 'te') {map.innerHTML += `<div class="map-te" id="${e}"></div>`}
-    }));
+    })); */
 
 //access player div
 var player = document.getElementById('player');
 var initialPosition = player.getBoundingClientRect();
 var initialX = initialPosition.x;
 var initialY = initialPosition.y;
+var isJumping = false;
 
 
 // Event Listeners For Character Motion
@@ -89,14 +90,30 @@ function move(e) {
     if (e.key === ' ') {
         jump();
     }
-    if (e.key === 'c' ) {
+    if (e.key === 'v' ) {
         moveLeft();
     } 
-    if (e.key === 'n') {
+    if (e.key === 'b') {
         moveRight();
     }
     if (e.key === 'f') {
         fall();
+    }
+    if (e.key === 'c') {
+        jumpLeft();
+        var timeoutIDML = setTimeout(moveJLeft, 900);
+        var timeoutIDFL = setTimeout(fallLeft, 1200);
+    }
+    if (e.key === 'n') {
+        jumpRight();
+        var timeoutIDMR = setTimeout(moveJRight, 900);
+        var timeoutIDFR = setTimeout(fallRight, 1200);
+    } 
+    if (e.key === 'x') {
+        fallLeft();
+    }
+    if (e.key === 'm') {
+        fallRight();
     }
 }
 
@@ -105,6 +122,9 @@ function move(e) {
 //  Access Player Posioon
 
 function moveRight() {
+    if (isJumping) {
+        return;
+    }
     var currentPositionR = getPosition('player');
     var translateXR = currentPositionR[0] + 25 - initialX;
     var translateYR = currentPositionR[1] - initialY;
@@ -112,25 +132,36 @@ function moveRight() {
         // on the edge of the map
         // with a block
     player.style.transform = `translate(${translateXR}px, ${translateYR}px)`;
+    player.style.transitionTimingFunction = 'linear';
+    player.style.transitionDuration = '0.3s';
+
 };
 
 function moveLeft() {
+    if (isJumping) {
+        return;
+    }
     var currentPositionL = getPosition('player');
     var translateXL = currentPositionL[0] - 25 - initialX;
     var translateYL = currentPositionL[1] - initialY;
     //check if collision
     player.style.transform = `translate(${translateXL}px, ${translateYL}px)`;
-   
-    
+    player.style.transitionTimingFunction = 'linear'; 
+    player.style.transitionDuration = '0.3s';
 };
 
 
 function jump() {
+    if (isJumping) {
+        return;
+    }
+    isJumping = true;
     var currentPositionJ = getPosition('player');
     var translateYJ = currentPositionJ[1] - 40 - initialY;
     var translateXJ = currentPositionJ[0] - initialX;
     player.style.transform = `translate(${translateXJ}px, ${translateYJ}px)`;
     player.style.transitionDuration = '1s';
+    player.style.transitionTimingFunction = 'ease-out';
     
     // check if collision
     // if yes go down
@@ -139,11 +170,80 @@ function jump() {
 }; 
 
 function fall() {
+    if (!isJumping) {
+        return;
+    }
     var currentPositionF = getPosition('player');
     var translateYJ = currentPositionF[1] + 40 - initialY;
     var translateXJ = currentPositionF[0] - initialX;
     player.style.transform = `translate(${translateXJ}px, ${translateYJ}px)`;
     player.style.transitionDuration = '1s';
+    player.style.transitionTimingFunction = 'ease-in';
+}
+
+function jumpRight() {
+    if (isJumping) {
+        return;
+    }
+    isJumping = true;
+    var currentPositionJR = getPosition('player');
+    var translateYJR = currentPositionJR[1] - 40 - initialY;
+    var translateXJR = currentPositionJR[0] + 35 - initialX;
+    player.style.transform = `translate(${translateXJR}px, ${translateYJR}px)`;
+    player.style.transitionDuration = '1s';
+    player.style.transitionTimingFunction = 'ease-out';
+}
+
+function moveJRight() {
+    var currentPositionMJR = getPosition('player');
+    var translateYMJR = currentPositionMJR[1] - initialY;
+    var translateXMJR = currentPositionMJR[0] + 3 - initialX;
+    player.style.transform = `translate(${translateXMJR}px, ${translateYMJR}px)`;
+    player.style.transitionDuration = '0.2s';
+    player.style.transitionTimingFunction = 'linear';
+}
+
+function fallRight() {
+    var currentPositionFR = getPosition('player');
+    var translateYFR = currentPositionFR[1] + 40 - initialY;
+    var translateXFR = currentPositionFR[0] + 35 - initialX;
+    player.style.transform = `translate(${translateXFR}px, ${translateYFR}px)`;
+    player.style.transitionDuration = '1s';
+    player.style.transitionTimingFunction = 'ease-in';
+}
+
+function jumpLeft() {
+    if (isJumping) {
+        return;
+    }
+    isJumping = true;
+    var currentPositionJL = getPosition('player');
+    var translateYJL = currentPositionJL[1] - 40 - initialY;
+    var translateXJL = currentPositionJL[0] - 35 - initialX;
+    player.style.transform = `translate(${translateXJL}px, ${translateYJL}px)`;
+    player.style.transitionDuration = '1s';
+    player.style.transitionTimingFunction = 'ease-out';
+}
+
+function moveJLeft() {
+    var currentPositionMJL = getPosition('player');
+    var translateYMJL = currentPositionMJL[1] - initialY;
+    var translateXMJL = currentPositionMJL[0] - 3 - initialX;
+    player.style.transform = `translate(${translateXMJL}px, ${translateYMJL}px)`;
+    player.style.transitionDuration = '0.2s';
+    player.style.transitionTimingFunction = 'linear';
+}
+
+function fallLeft() {
+    if (!isJumping) {
+        return;
+    }
+    var currentPositionFL = getPosition('player');
+    var translateYFL = currentPositionFL[1] + 40 - initialY;
+    var translateXFL = currentPositionFL[0] - 35 - initialX;
+    player.style.transform = `translate(${translateXFL}px, ${translateYFL}px)`;
+    player.style.transitionDuration = '1s';
+    player.style.transitionTimingFunction = 'ease-in';
 }
 
 function getPosition(elem) {
