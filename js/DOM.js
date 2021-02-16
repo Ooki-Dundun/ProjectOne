@@ -184,6 +184,7 @@ function fall() {
 function changeJumpAndFallToFalse() {
     isJumping = false;
     isFalling = false;
+    console.log(player.getBoundingClientRect());
 }
 
 function jumpRight() {
@@ -193,6 +194,7 @@ function jumpRight() {
     }
     isJumping = true;
     var currentPositionJR = getPosition('player');
+    console.log(`current position when jumping is ${currentPositionJR}`)
     var translateYJR = currentPositionJR[1] - 40 - initialY;
     var translateXJR = currentPositionJR[0] + 50 - initialX;
     player.style.transform = `translate(${translateXJR}px, ${translateYJR}px)`;
@@ -214,7 +216,8 @@ function moveJRight() {
 
 function fallRight() {
     var currentPositionFR = getPosition('player');
-    var translateYFR = currentPositionFR[1] + 40 - initialY;
+    console.log(`current position when falling is ${currentPositionFR}`);
+    var translateYFR = currentPositionFR[1] + 38.43 - initialY;
     var translateXFR = currentPositionFR[0] + 30 - initialX;
     player.style.transform = `translate(${translateXFR}px, ${translateYFR}px)`;
     player.style.transitionDuration = '0.4s';
@@ -249,7 +252,7 @@ function moveJLeft() {
 
 function fallLeft() {
     var currentPositionFL = getPosition('player');
-    var translateYFL = currentPositionFL[1] + 40 - initialY;
+    var translateYFL = currentPositionFL[1] + 38.43 - initialY;
     var translateXFL = currentPositionFL[0] - 30 - initialX;
     player.style.transform = `translate(${translateXFL}px, ${translateYFL}px)`;
     player.style.transitionDuration = '0.4s';
