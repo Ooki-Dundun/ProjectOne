@@ -90,7 +90,8 @@ const initialX = initialPosition.x;
 const initialY = initialPosition.y;
 var isJumping = false;
 var isFalling = false;
-var colliding = false;
+var collidingWithBlocks = false;
+var collidingwithFloor = true;
 var isMovingRight = false;
 var isMovingLeft = false;
 var isOnFloor = true;
@@ -316,7 +317,7 @@ function getCollidingDataClassName(className) {
     return collData;
 }
 
-function isColliding() {
+function isCollidingWithBlocks() {
     let playerPosition = getPositionId('player');
     let mapBlocksCollidingData = getCollidingDataClassName('map-block');
     mapBlocksCollidingData.forEach( (n) => {
@@ -324,16 +325,14 @@ function isColliding() {
         && ((playerPosition[4] >= n[4] && playerPosition[4] <= n[5]) || (playerPosition[5] >= n[4] && playerPosition[5] <= n[5]) ) ) {
             console.log(n);
             console.log("player is colliding!!!");
-            colliding = true;
+            collidingWithBlocks = true;
             if (isFalling) {
                 if ((playerPosition[5] >= n[4] && playerPosition[5] <= n[5])) {
-                isOnFloor = false;
-                isOnBlock = true;
-                player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[5] - initialY - 15}px)`;
-                player.style.transitionDuration = '0s';
-                isFalling = false;
-                } else {
-                    isOnBlock = false;
+                  player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[5] - initialY - 15}px)`;
+                  player.style.transitionDuration = '0s';
+                  isOnBlocks = true;
+                  isOnFloor = false;
+                  isFalling = false;
                 }
             }
             if (isMovingRight || isMovingLeft) {
@@ -350,7 +349,8 @@ function isColliding() {
             }
                 
         } else {
-            colliding = false;
+            console.log('no longer colliding with blocks');
+            collidingWithBlocks = false;
             return;
         }
     });
@@ -364,11 +364,12 @@ function isColliding() {
     player.style.transitionDuration = '0s';
     isFalling = false;
     isJumping = false;
+    isOnBlocks = false;
+    isOnFloor = true;
     }
-    
 } */
 
- function checkIfOnFloor() {
+/* function checkIfOnFloor() {
     let playerPosition = getPositionId('player');
     let floorCollidingData = getPositionId('floor');
     if ( (playerPosition[5] >= floorCollidingData[4]) && (playerPosition[5] <= floorCollidingData[5]) ){
@@ -388,7 +389,7 @@ function isColliding() {
     }
 } 
 
- function checkIfOnBlocks() {
+  function checkIfOnBlocks() {
     let playerPosition = getPositionId('player');
     let mapBlocksCollidingData = getCollidingDataClassName('map-block');
     mapBlocksCollidingData.forEach(n => {
@@ -399,15 +400,16 @@ function isColliding() {
             return;
         } else {
             isOnBlocks = false;
+            fall();
         }
-    })
-} 
+    }) 
+} */
 
 var checkCollision = setInterval( () => {
-  isColliding();
-  checkIfOnFloor();
+  isCollidingWithBlocks();
   //isCollidingWithFloor();
-  //checkIfOnFloor);
+  //checkIfOnFloor();
+  //checkIfOnBlocks();
 }, 1);
 
 
