@@ -56,18 +56,8 @@
     z-index: 1;
 }
 
-.map-o {
-    box-sizing: border-box;
-    border: 1px solid black;
-    width: 10px;
-    height: 10px;
-    position: relative;
-    background: firebrick;
-    float: left;
-    z-index: 1;
-}
 
-.map-o {
+.o {
     box-sizing: border-box;
     border: 1px solid black;
     width: 10px;
@@ -78,7 +68,7 @@
     z-index: 1;
 }
 
-#bottom {
+#floor {
     width: 500px;
     height: 20px;
     background: green;
