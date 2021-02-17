@@ -26,20 +26,6 @@
     transform: translate3d(0px, 0px, 0px);
 }
 
-#move-right {
-    
-}
-
-#move-left {
-    
-}
-
-#jump { 
-    
-}
-
-
-
 .map-square {
     box-sizing: border-box;
     width: 10px;

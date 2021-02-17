@@ -54,13 +54,13 @@ const mapJS = [
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 'b', 'b', 'b', 'b', 'b', 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 'b', 'b', 'b', 'b', 'b', 'b', 'b', 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', , 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 29, 30, 31, 32, 33, 34, 35, 36, 37, 'o', 'o', 'o', 'o', 'o', 'o', 'o', 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4, 5, 6, 'o', 'o', 'o', 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 'b', 'b', 'b', 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
 ]
 
 // access div map container
@@ -93,7 +93,8 @@ var isFalling = false;
 var colliding = false;
 var isMovingRight = false;
 var isMovingLeft = false;
-var isOnHardGround = true;
+var isOnFloor = true;
+var isOnBlocks = false;
 
 
 // Event Listeners For Character Motion
@@ -116,7 +117,10 @@ function move(e) {
         jumpLeft();
     }
     if (e.key === 'n') {
-        jumpRight();
+        getPositionId('player');
+        //checkIfOnFloor();
+        //checkIfOnBlocks();
+        //jumpRight();
     } 
 }
 
@@ -142,7 +146,7 @@ function moveRight() {
 
 function moveLeft() {
     if (isJumping) {
-        console.log('cannot move left while jumping or falling');
+        console.log('cannot move left while jumping or falling or while blocked');
         return;
     }
     isMovingLeft = true;
@@ -170,8 +174,8 @@ function jump() {
     isMovingLeft = false;
     isMovingRight = false;
     var currentPositionJ = getPositionId('player');
-    var translateYJ = currentPositionJ[1] - 53 - initialY;
     var translateXJ = currentPositionJ[0] - initialX;
+    var translateYJ = currentPositionJ[1] - 53 - initialY;
     player.style.transform = `translate(${translateXJ}px, ${translateYJ}px)`;
     player.style.transitionDuration = '0.8s';
     player.style.transitionTimingFunction = 'ease-out';
@@ -184,12 +188,16 @@ function fall() {
         return;
     }
     isFalling = true;
+    isJumping = false;
     var currentPositionF = getPositionId('player');
-    var translateYJ = currentPositionF[1] + 53 - initialY;
     var translateXJ = currentPositionF[0] - initialX;
+    var translateYJ = currentPositionF[1] + 53 - initialY;
     player.style.transform = `translate(${translateXJ}px, ${translateYJ}px)`;
     player.style.transitionDuration = '0.5s';
     player.style.transitionTimingFunction = 'ease-in';
+    setTimeout( () => {
+        isFalling = false;
+    }, 500);
 }
 
 function changeJumpAndFallToFalse() {
@@ -208,9 +216,9 @@ function jumpRight() {
     isMovingLeft = false;
     isMovingRight = false;
     var currentPositionJR = getPositionId('player');
-    console.log(`current position when jumping is ${currentPositionJR}`)
-    var translateYJR = currentPositionJR[1] - 53 - initialY;
+    console.log(`current position when jumping is ${currentPositionJR}`);
     var translateXJR = currentPositionJR[0] + 50 - initialX;
+    var translateYJR = currentPositionJR[1] - 53 - initialY;
     player.style.transform = `translate(${translateXJR}px, ${translateYJR}px)`;
     player.style.transitionDuration = '0.7s';
     player.style.transitionTimingFunction = 'ease-out';
@@ -221,9 +229,10 @@ function jumpRight() {
 
 function moveJRight() {
     isFalling = true;
+    isJumping = true;
     var currentPositionMJR = getPositionId('player');
-    var translateYMJR = currentPositionMJR[1] - initialY;
     var translateXMJR = currentPositionMJR[0] + 9 - initialX;
+    var translateYMJR = currentPositionMJR[1] - initialY;
     player.style.transform = `translate(${translateXMJR}px, ${translateYMJR}px)`;
     player.style.transitionDuration = '0.2s';
     player.style.transitionTimingFunction = 'linear';
@@ -231,9 +240,10 @@ function moveJRight() {
 
 function fallRight() {
     isFalling = true;
+    isJumping = true;
     var currentPositionFR = getPositionId('player');
-    var translateYFR = currentPositionFR[1] + 53 - initialY;
     var translateXFR = currentPositionFR[0] + 30 - initialX;
+    var translateYFR = currentPositionFR[1] + 53 - initialY;
     player.style.transform = `translate(${translateXFR}px, ${translateYFR}px)`;
     player.style.transitionDuration = '0.4s';
     player.style.transitionTimingFunction = 'ease-in';
@@ -249,8 +259,8 @@ function jumpLeft() {
     isMovingLeft = false;
     isMovingRight = false;
     var currentPositionJL = getPositionId('player');
-    var translateYJL = currentPositionJL[1] - 53 - initialY;
     var translateXJL = currentPositionJL[0] - 50 - initialX;
+    var translateYJL = currentPositionJL[1] - 53 - initialY;
     player.style.transform = `translate(${translateXJL}px, ${translateYJL}px)`;
     player.style.transitionDuration = '0.7s';
     player.style.transitionTimingFunction = 'ease-out';
@@ -261,9 +271,10 @@ function jumpLeft() {
 
 function moveJLeft() {
     isFalling = true;
+    isJumping = true;
     var currentPositionMJL = getPositionId('player');
-    var translateYMJL = currentPositionMJL[1] - initialY;
     var translateXMJL = currentPositionMJL[0] - 9 - initialX;
+    var translateYMJL = currentPositionMJL[1] - initialY;
     player.style.transform = `translate(${translateXMJL}px, ${translateYMJL}px)`;
     player.style.transitionDuration = '0.2s';
     player.style.transitionTimingFunction = 'linear';
@@ -271,6 +282,7 @@ function moveJLeft() {
 
 function fallLeft() {
     isFalling = true;
+    isJumping = true;
     var currentPositionFL = getPositionId('player');
     var translateYFL = currentPositionFL[1] + 53 - initialY;
     var translateXFL = currentPositionFL[0] - 30 - initialX;
@@ -285,8 +297,8 @@ function getPositionId(id) {
     let y = elemPosition.y;
     let edgeXL = x - elemPosition.width / 2;
     let edgeXR = x + elemPosition.width / 2;
-    let edgeYT = y + elemPosition.height / 2;
-    let edgeYB = y - elemPosition.height / 2;
+    let edgeYT = y - elemPosition.height / 2;
+    let edgeYB = y + elemPosition.height / 2;
     let position = [x, y, edgeXL, edgeXR, edgeYT, edgeYB];
     return position;
 };
@@ -299,32 +311,29 @@ function getPositionsClassName(className) {
 function getCollidingDataClassName(className) {
     let positions = getPositionsClassName(className);
     let collData = positions.map(n => 
-        [n.x, n.y, n.x - n.width/2, n.x + n.width/2, n.y + n.height/2, n.y - n.height/2]
+        [n.x, n.y, n.x - n.width/2, n.x + n.width/2, n.y - n.height/2, n.y + n.height/2]
     )
     return collData;
 }
-
-getPositionId('player')
-getCollidingDataClassName('map-block');
-
 
 function isColliding() {
     let playerPosition = getPositionId('player');
     let mapBlocksCollidingData = getCollidingDataClassName('map-block');
     mapBlocksCollidingData.forEach( (n) => {
         if ( ( (playerPosition[2] >= n[2] && playerPosition[2] <= n[3]) || (playerPosition[3] >= n[2] && playerPosition[3] <= n[3]) ) 
-        && ((playerPosition[4] <= n[4] && playerPosition[4] >= n[5]) || (playerPosition[5] <= n[4] && playerPosition[5] >= n[5]) ) ) {
+        && ((playerPosition[4] >= n[4] && playerPosition[4] <= n[5]) || (playerPosition[5] >= n[4] && playerPosition[5] <= n[5]) ) ) {
             console.log(n);
             console.log("player is colliding!!!");
             colliding = true;
             if (isFalling) {
-                if ((playerPosition[5] <= n[4] && playerPosition[5] >= n[5])) {
-                console.log('coucou je tombe')
-                console.log(playerPosition);
-                console.log(n);
-                player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[5] - initialY - 13}px)`;
+                if ((playerPosition[5] >= n[4] && playerPosition[5] <= n[5])) {
+                isOnFloor = false;
+                isOnBlock = true;
+                player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[5] - initialY - 15}px)`;
                 player.style.transitionDuration = '0s';
                 isFalling = false;
+                } else {
+                    isOnBlock = false;
                 }
             }
             if (isMovingRight || isMovingLeft) {
@@ -347,15 +356,61 @@ function isColliding() {
     });
 }
 
-function checkIfOnHardGround() {
+/* function isCollidingWithFloor() {
     let playerPosition = getPositionId('player');
+    let floorCollidingData = getPositionId('floor');
+    if ( (isFalling) && (playerPosition[5] <= floorCollidingData[4]) && (playerPosition[5] <= floorCollidingData[5]) ){
+    player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[5] - initialY - 10}px)`;
+    player.style.transitionDuration = '0s';
+    isFalling = false;
+    isJumping = false;
+    }
     
-}
+} */
+
+ function checkIfOnFloor() {
+    let playerPosition = getPositionId('player');
+    let floorCollidingData = getPositionId('floor');
+    if ( (playerPosition[5] >= floorCollidingData[4]) && (playerPosition[5] <= floorCollidingData[5]) ){
+        console.log('is on floor');
+        isOnFloor = true;
+        isOnBlocks = false;
+        if (isFalling) {
+            player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[5] - initialY - 10}px)`;
+            player.style.transitionDuration = '0s';
+        }
+        return;
+    } else {
+        isOnFloor = false;
+    }
+    if (!isJumping && (!isOnFloor || !isOnBlocks) ) {
+        fall();
+    }
+} 
+
+ function checkIfOnBlocks() {
+    let playerPosition = getPositionId('player');
+    let mapBlocksCollidingData = getCollidingDataClassName('map-block');
+    mapBlocksCollidingData.forEach(n => {
+        if (playerPosition[5] >= n[4] && playerPosition[5] <= n[5]) {
+            console.log('is on blocks');
+            isOnFloor = false;
+            isOnBlocks = true;
+            return;
+        } else {
+            isOnBlocks = false;
+        }
+    })
+} 
 
 var checkCollision = setInterval( () => {
   isColliding();
-  checkIfOnHardGround();
+  checkIfOnFloor();
+  //isCollidingWithFloor();
+  //checkIfOnFloor);
 }, 1);
+
+
 
 // set interval
 
@@ -365,7 +420,7 @@ var checkCollision = setInterval( () => {
 
 // Dim Sum Falling
 
-// every X time, create a Dim Sum that is random between the array of 3 dim sum : red, yellow, xia long bao
+// every X time, create a Dim Sum that is random between the array of 3 dim sums : red, yellow, xia long bao
 // make it fall on the map
 
 
