@@ -84,12 +84,15 @@ var mapTE = document.getElementsByClassName('map-te');
 
 //Access player div and set important player variables
 var player = document.getElementById('player');
-const initialPosition = player.getBoundingClientRect();
+const playerStart = document.getElementById('player');
+const initialPosition = playerStart.getBoundingClientRect();
 const initialX = initialPosition.x;
 const initialY = initialPosition.y;
 var isJumping = false;
 var isFalling = false;
 var colliding = false;
+var canGoRight = true;
+var canGoLeft = true;
 
 
 // Event Listeners For Character Motion
@@ -102,10 +105,18 @@ function move(e) {
         jump();
     }
     if (e.key === 'v' ) {
+        if (!canGoLeft) {
+            console.log('cannot go left!')
+        } else {
         moveLeft();
+        }
     } 
     if (e.key === 'b') {
+        if(!canGoRight) {
+            console.log('cannot go right!')
+        } else {
         moveRight();
+        }
     }
     if (e.key === 'c') {
         jumpLeft();
@@ -154,15 +165,17 @@ function jump() {
         return;
     }
     isJumping = true;
+    isFalling = false;
     var currentPositionJ = getPositionId('player');
-    var translateYJ = currentPositionJ[1] - 40 - initialY;
+    var translateYJ = currentPositionJ[1] - 53 - initialY;
     var translateXJ = currentPositionJ[0] - initialX;
     player.style.transform = `translate(${translateXJ}px, ${translateYJ}px)`;
     player.style.transitionDuration = '0.8s';
     player.style.transitionTimingFunction = 'ease-out';
-    setTimeout(fall, 800);
-    setTimeout(changeJumpAndFallToFalse, 1300);
+    var timeoutFall = setTimeout(fall, 800);
+    var timeoutFalse = setTimeout(changeJumpAndFallToFalse, 1300);
     // check if collision
+   
     // if yes go down
     // if yes, stop here.
     // if not, got down
@@ -174,7 +187,7 @@ function fall() {
     }
     isFalling = true;
     var currentPositionF = getPositionId('player');
-    var translateYJ = currentPositionF[1] + 40 - initialY;
+    var translateYJ = currentPositionF[1] + 1100 - initialY;
     var translateXJ = currentPositionF[0] - initialX;
     player.style.transform = `translate(${translateXJ}px, ${translateYJ}px)`;
     player.style.transitionDuration = '0.5s';
@@ -193,9 +206,10 @@ function jumpRight() {
         return;
     }
     isJumping = true;
+    isFalling = false;
     var currentPositionJR = getPositionId('player');
     console.log(`current position when jumping is ${currentPositionJR}`)
-    var translateYJR = currentPositionJR[1] - 40 - initialY;
+    var translateYJR = currentPositionJR[1] - 53 - initialY;
     var translateXJR = currentPositionJR[0] + 50 - initialX;
     player.style.transform = `translate(${translateXJR}px, ${translateYJR}px)`;
     player.style.transitionDuration = '0.7s';
@@ -206,6 +220,7 @@ function jumpRight() {
 }
 
 function moveJRight() {
+    isFalling = true;
     var currentPositionMJR = getPositionId('player');
     var translateYMJR = currentPositionMJR[1] - initialY;
     var translateXMJR = currentPositionMJR[0] + 9 - initialX;
@@ -215,9 +230,9 @@ function moveJRight() {
 }
 
 function fallRight() {
+    isFalling = true;
     var currentPositionFR = getPositionId('player');
-    console.log(`current position when falling is ${currentPositionFR}`);
-    var translateYFR = currentPositionFR[1] + 38.47 - initialY;
+    var translateYFR = currentPositionFR[1] + 1100 - initialY;
     var translateXFR = currentPositionFR[0] + 30 - initialX;
     player.style.transform = `translate(${translateXFR}px, ${translateYFR}px)`;
     player.style.transitionDuration = '0.4s';
@@ -230,8 +245,9 @@ function jumpLeft() {
         return;
     }
     isJumping = true;
+    isFalling = false;
     var currentPositionJL = getPositionId('player');
-    var translateYJL = currentPositionJL[1] - 40 - initialY;
+    var translateYJL = currentPositionJL[1] - 53 - initialY;
     var translateXJL = currentPositionJL[0] - 50 - initialX;
     player.style.transform = `translate(${translateXJL}px, ${translateYJL}px)`;
     player.style.transitionDuration = '0.7s';
@@ -242,6 +258,7 @@ function jumpLeft() {
 }
 
 function moveJLeft() {
+    isFalling = true;
     var currentPositionMJL = getPositionId('player');
     var translateYMJL = currentPositionMJL[1] - initialY;
     var translateXMJL = currentPositionMJL[0] - 9 - initialX;
@@ -251,8 +268,9 @@ function moveJLeft() {
 }
 
 function fallLeft() {
+    isFalling = true;
     var currentPositionFL = getPositionId('player');
-    var translateYFL = currentPositionFL[1] + 38.47 - initialY;
+    var translateYFL = currentPositionFL[1] + 1100 - initialY;
     var translateXFL = currentPositionFL[0] - 30 - initialX;
     player.style.transform = `translate(${translateXFL}px, ${translateYFL}px)`;
     player.style.transitionDuration = '0.4s';
@@ -268,7 +286,6 @@ function getPositionId(id) {
     let edgeYT = y + elemPosition.height / 2;
     let edgeYB = y - elemPosition.height / 2;
     let position = [x, y, edgeXL, edgeXR, edgeYT, edgeYB];
-    console.log(position);
     return position;
 };
 
@@ -282,7 +299,6 @@ function getCollidingDataClassName(className) {
     let collData = positions.map(n => 
         [n.x, n.y, n.x - n.width/2, n.x + n.width/2, n.y + n.height/2, n.y - n.height/2]
     )
-    console.log(collData)
     return collData;
 }
 
@@ -297,12 +313,25 @@ function isColliding() {
         // collision on x axis right part of player
         if ( ( (playerPosition[2] >= n[2] && playerPosition[2] <= n[3]) || (playerPosition[3] >= n[2] && playerPosition[3] <= n[3]) ) 
         && ((playerPosition[4] <= n[4] && playerPosition[4] >= n[5]) || (playerPosition[5] <= n[4] && playerPosition[5] >= n[5]) ) ) {
-            console.log("player is colliding!!!")
+            console.log(n);
+            console.log("player is colliding!!!");
+            colliding = true;
+            if (isFalling) {
+                console.log('coucou je tombe')
+                console.log(playerPosition);
+                console.log(n);
+                player.style.transform = `translate(${playerPosition[0]-initialX}px, ${playerPosition[1]-initialY - 10}px)`;
+                isFalling = false;
+            }
+            return n;
+        } else {
+            colliding = false;
+            return;
         }
     });
 }
 
-
+var checkCollision = setInterval(isColliding, 1)
 
 // set interval
 
