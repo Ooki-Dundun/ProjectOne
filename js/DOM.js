@@ -57,10 +57,10 @@ const mapJS = [
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+    [ 1, 2, 3, 'b' , 5, 6, 7, 8, , 10, 11, 12, 'b', 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
 ]
 
 // access div map container
@@ -89,6 +89,7 @@ const initialX = initialPosition.x;
 const initialY = initialPosition.y;
 var isJumping = false;
 var isFalling = false;
+var colliding = false;
 
 
 // Event Listeners For Character Motion
@@ -99,7 +100,6 @@ function move(e) {
     e = e || window.event
     if (e.key === ' ') {
         jump();
-        isColliding();
     }
     if (e.key === 'v' ) {
         moveLeft();
@@ -122,7 +122,7 @@ function moveRight() {
         console.log('cannot move right while jumping or falling');
         return;
     }
-    var currentPositionR = getPosition('player');
+    var currentPositionR = getPositionId('player');
     var translateXR = currentPositionR[0] + 25 - initialX;
     var translateYR = currentPositionR[1] - initialY;
     //check if collision
@@ -138,7 +138,7 @@ function moveLeft() {
         console.log('cannot move left while jumping or falling');
         return;
     }
-    var currentPositionL = getPosition('player');
+    var currentPositionL = getPositionId('player');
     var translateXL = currentPositionL[0] - 25 - initialX;
     var translateYL = currentPositionL[1] - initialY;
     //check if collision
@@ -154,7 +154,7 @@ function jump() {
         return;
     }
     isJumping = true;
-    var currentPositionJ = getPosition('player');
+    var currentPositionJ = getPositionId('player');
     var translateYJ = currentPositionJ[1] - 40 - initialY;
     var translateXJ = currentPositionJ[0] - initialX;
     player.style.transform = `translate(${translateXJ}px, ${translateYJ}px)`;
@@ -173,7 +173,7 @@ function fall() {
         return;
     }
     isFalling = true;
-    var currentPositionF = getPosition('player');
+    var currentPositionF = getPositionId('player');
     var translateYJ = currentPositionF[1] + 40 - initialY;
     var translateXJ = currentPositionF[0] - initialX;
     player.style.transform = `translate(${translateXJ}px, ${translateYJ}px)`;
@@ -193,7 +193,7 @@ function jumpRight() {
         return;
     }
     isJumping = true;
-    var currentPositionJR = getPosition('player');
+    var currentPositionJR = getPositionId('player');
     console.log(`current position when jumping is ${currentPositionJR}`)
     var translateYJR = currentPositionJR[1] - 40 - initialY;
     var translateXJR = currentPositionJR[0] + 50 - initialX;
@@ -206,7 +206,7 @@ function jumpRight() {
 }
 
 function moveJRight() {
-    var currentPositionMJR = getPosition('player');
+    var currentPositionMJR = getPositionId('player');
     var translateYMJR = currentPositionMJR[1] - initialY;
     var translateXMJR = currentPositionMJR[0] + 9 - initialX;
     player.style.transform = `translate(${translateXMJR}px, ${translateYMJR}px)`;
@@ -215,7 +215,7 @@ function moveJRight() {
 }
 
 function fallRight() {
-    var currentPositionFR = getPosition('player');
+    var currentPositionFR = getPositionId('player');
     console.log(`current position when falling is ${currentPositionFR}`);
     var translateYFR = currentPositionFR[1] + 38.47 - initialY;
     var translateXFR = currentPositionFR[0] + 30 - initialX;
@@ -230,7 +230,7 @@ function jumpLeft() {
         return;
     }
     isJumping = true;
-    var currentPositionJL = getPosition('player');
+    var currentPositionJL = getPositionId('player');
     var translateYJL = currentPositionJL[1] - 40 - initialY;
     var translateXJL = currentPositionJL[0] - 50 - initialX;
     player.style.transform = `translate(${translateXJL}px, ${translateYJL}px)`;
@@ -242,7 +242,7 @@ function jumpLeft() {
 }
 
 function moveJLeft() {
-    var currentPositionMJL = getPosition('player');
+    var currentPositionMJL = getPositionId('player');
     var translateYMJL = currentPositionMJL[1] - initialY;
     var translateXMJL = currentPositionMJL[0] - 9 - initialX;
     player.style.transform = `translate(${translateXMJL}px, ${translateYMJL}px)`;
@@ -251,7 +251,7 @@ function moveJLeft() {
 }
 
 function fallLeft() {
-    var currentPositionFL = getPosition('player');
+    var currentPositionFL = getPositionId('player');
     var translateYFL = currentPositionFL[1] + 38.47 - initialY;
     var translateXFL = currentPositionFL[0] - 30 - initialX;
     player.style.transform = `translate(${translateXFL}px, ${translateYFL}px)`;
@@ -259,60 +259,50 @@ function fallLeft() {
     player.style.transitionTimingFunction = 'ease-in';
 }
 
-function getPosition(elem) {
-    var elemPosition = document.getElementById(`${elem}`).getBoundingClientRect();
-    var x = elemPosition.x;
-    var y = elemPosition.y;
-    var edgeXR = x + elemPosition.width / 2;
-    var edgeXL = x - elemPosition.width / 2;
-    var edgeYT = y + elemPosition.height / 2;
-    var edgeYB = y + elemPosition.height / 2;
-    return [x, y, edgeXR, edgeXL, edgeYT, edgeYB];
+function getPositionId(id) {
+    let elemPosition = document.getElementById(`${id}`).getBoundingClientRect();
+    let x = elemPosition.x;
+    let y = elemPosition.y;
+    let edgeXL = x - elemPosition.width / 2;
+    let edgeXR = x + elemPosition.width / 2;
+    let edgeYT = y + elemPosition.height / 2;
+    let edgeYB = y - elemPosition.height / 2;
+    let position = [x, y, edgeXL, edgeXR, edgeYT, edgeYB];
+    console.log(position);
+    return position;
 };
 
-function getPositions(className) {
+function getPositionsClassName(className) {
     let itemsPositions = [...document.getElementsByClassName(className)].map(n => n.getBoundingClientRect());
     return itemsPositions;
 }
-getPositions('map-block');
 
-function getCollidingData(className) {
-    let positions = getPositions(className);
-    let collData = positions.map(n => {
-    })
-    for (let i = 0; i < positions.length; i++) {
-        console.log(positions[i]);
-        let currentBlock = positions[i];
-        let cBlockX = currentBlock.x;
-        let cBlockY = currentBlock.y;
-        let cBlockEdgeXR = cBlockX + currentBlock.width / 2;
-        let cBlockEdgeXL = cBlockX - currentBlock.width / 2;
-        let cBlockEdgeYT = cBlockY + currentBlock.height / 2;
-        let cBlockEdgeYB = cBlockY - currentBlock.height / 2;
-        console.log( cBlockX, cBlockY, cBlockEdgeXR, cBlockEdgeXL, cBlockEdgeYT, cBlockEdgeYB);
-    }
+function getCollidingDataClassName(className) {
+    let positions = getPositionsClassName(className);
+    let collData = positions.map(n => 
+        [n.x, n.y, n.x - n.width/2, n.x + n.width/2, n.y + n.height/2, n.y - n.height/2]
+    )
+    console.log(collData)
+    return collData;
 }
 
-getCollidingData('map-block');
+getPositionId('player')
+getCollidingDataClassName('map-block');
+
 
 function isColliding() {
-    var playerPosition = getPosition('player');
-    var mapBlocksHere = [...mapBlocks];
-    var mapBlocksPositions = mapBlocksHere.map(n => n.getBoundingClientRect());
-    console.log(playerPosition);
-    console.log(mapBlocksPositions);   
-    console.log(mapBlocksPositions[0]);
-    for (let i = 0; i < mapBlocksPositions.length; i ++) {
-        let currentBlock = mapBlocksPositions[i];
-        let cBlockX = currentBlock.x;
-        let cBockY = currentBlock.y;
-        let cBlockEdgeXR = 1;
-        let cBlockEdgeXL = 1;
-        let cBlockEdgeYT = 1;
-        let cBlockEdgeYB = 1;
-        
-    }
+    let playerPosition = getPositionId('player');
+    let mapBlocksCollidingData = getCollidingDataClassName('map-block');
+    mapBlocksCollidingData.forEach( (n) => {
+        // collision on x axis right part of player
+        if ( ( (playerPosition[2] >= n[2] && playerPosition[2] <= n[3]) || (playerPosition[3] >= n[2] && playerPosition[3] <= n[3]) ) 
+        && ((playerPosition[4] <= n[4] && playerPosition[4] >= n[5]) || (playerPosition[5] <= n[4] && playerPosition[5] >= n[5]) ) ) {
+            console.log("player is colliding!!!")
+        }
+    });
 }
+
+
 
 // set interval
 
