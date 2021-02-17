@@ -263,8 +263,37 @@ function getPosition(elem) {
     var elemPosition = document.getElementById(`${elem}`).getBoundingClientRect();
     var x = elemPosition.x;
     var y = elemPosition.y;
-    return [x, y];
+    var edgeXR = x + elemPosition.width / 2;
+    var edgeXL = x - elemPosition.width / 2;
+    var edgeYT = y + elemPosition.height / 2;
+    var edgeYB = y + elemPosition.height / 2;
+    return [x, y, edgeXR, edgeXL, edgeYT, edgeYB];
 };
+
+function getPositions(className) {
+    let itemsPositions = [...document.getElementsByClassName(className)].map(n => n.getBoundingClientRect());
+    return itemsPositions;
+}
+getPositions('map-block');
+
+function getCollidingData(className) {
+    let positions = getPositions(className);
+    let collData = positions.map(n => {
+    })
+    for (let i = 0; i < positions.length; i++) {
+        console.log(positions[i]);
+        let currentBlock = positions[i];
+        let cBlockX = currentBlock.x;
+        let cBlockY = currentBlock.y;
+        let cBlockEdgeXR = cBlockX + currentBlock.width / 2;
+        let cBlockEdgeXL = cBlockX - currentBlock.width / 2;
+        let cBlockEdgeYT = cBlockY + currentBlock.height / 2;
+        let cBlockEdgeYB = cBlockY - currentBlock.height / 2;
+        console.log( cBlockX, cBlockY, cBlockEdgeXR, cBlockEdgeXL, cBlockEdgeYT, cBlockEdgeYB);
+    }
+}
+
+getCollidingData('map-block');
 
 function isColliding() {
     var playerPosition = getPosition('player');
@@ -272,6 +301,17 @@ function isColliding() {
     var mapBlocksPositions = mapBlocksHere.map(n => n.getBoundingClientRect());
     console.log(playerPosition);
     console.log(mapBlocksPositions);   
+    console.log(mapBlocksPositions[0]);
+    for (let i = 0; i < mapBlocksPositions.length; i ++) {
+        let currentBlock = mapBlocksPositions[i];
+        let cBlockX = currentBlock.x;
+        let cBockY = currentBlock.y;
+        let cBlockEdgeXR = 1;
+        let cBlockEdgeXL = 1;
+        let cBlockEdgeYT = 1;
+        let cBlockEdgeYB = 1;
+        
+    }
 }
 
 // set interval
