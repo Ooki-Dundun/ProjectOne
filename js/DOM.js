@@ -90,6 +90,7 @@ const playerStart = document.getElementById('player');
 const initialPosition = playerStart.getBoundingClientRect();
 const initialX = initialPosition.x;
 const initialY = initialPosition.y;
+var collidingWithBlocks = false;
 var isJumping = false;
 var isFalling = false;
 var isMovingRight = false;
@@ -319,7 +320,7 @@ function getCollidingDataClassName(className) {
     return collData;
 }
 
-/* function isCollidingWithBlocks() {
+ /* function isCollidingWithBlocks() {
     let playerPosition = getPositionId('player');
     let mapBlocksCollidingData = getCollidingDataClassName('map-block');
     mapBlocksCollidingData.forEach( (n) => {
@@ -340,14 +341,12 @@ function getCollidingDataClassName(className) {
                      collidingWithBlocks = true;
                      player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY}px)`
                      player.style.transitionDuration = '0s';
-                     collidingWithBlocks = true;
                 }
                 if ( (playerPosition[3] >= n[2] && playerPosition[3] <= n[3]) && isMovingRight ) {
                     console.log("cannot move right!");
                     collidingWithBlocks = true;
                     player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY}px)`
                     player.style.transitionDuration = '0s';
-                    collidingWithBlocks = true;
                             
                 }
             }
@@ -363,17 +362,17 @@ function getCollidingDataClassName(className) {
 
 //modified version
 
-function isCollidingWithBlocks() {
+ function isCollidingWithBlocks() {
     let playerPosition = getPositionId('player');
     let mapBlocksCollidingData = getCollidingDataClassName('map-block');
     let floorCollidingData = getPositionId('floor');
     if (isFalling && !isOnBlocks && !isOnFloor) {
         // collide with blocks when falling
-        mapBlocksCollidingData.forEeach( (n) => {
-            if ( (playerPosition[0] >= n[2] && playerposition[0] <= n[3]) 
+        mapBlocksCollidingData.forEach( (n) => {
+            if ( (playerPosition[0] >= n[2] && playerPosition[0] <= n[3]) 
             &&   (playerPosition[5] >= n[4] && playerPosition[5] <= n[5])) {
                 console.log('is colliding with blocks!');
-                player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[5] - initialY}px)`;
+                player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[5] - initialY - 15}px)`;
                 player.style.transitionDuration = '0s';
                 isOnBlocks = true;
                 isOnFloor = false;
@@ -393,36 +392,23 @@ function isCollidingWithBlocks() {
             isOnFloor = true;
             isMovingRight = false;
             isMovingLeft = false;
+        }
     }
-    // collide with blocks when moving left
-    if (isMovingLeft) {
-        mapBlocksCollidingData.forEeach( (n) => {
-            if ( (playerPosition[2] >= n[2] && playerPosition[2] === n[3]) && 
-            ( (playerPosition[1] >= n[4] && playerPosition[1] <= [5]) || (playerPosition[5] >= n[4] && playerPosition[1] <= [5]) || (playerPosition[4] >= n[4] && playerPosition[1] <= [5]) )) {
-                console.log('cannot move left!');
-                 collidingWithBlocks = true;
-                 player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY}px)`
-                 player.style.transitionDuration = '0s';
-                 isFalling = false;
-                 isJumping = false;
+    // collide with blocks when moving left or right
+    if (isMovingRight || isMovingLeft) {
+        mapBlocksCollidingData.forEach( (n) => {
+            if ( ( (playerPosition[2] >= n[2] && playerPosition[2] <= n[3] && isMovingLeft) || (playerPosition[3] >= n[2] && playerPosition[3] <= n[3] && isMovingRight) ) 
+            && ( (playerPosition[5] >= n[4] && playerPosition[5] <= n[5]) ) ) {
+              console.log('cannot move while blocked!');
+              collidingWithBlocks = true;
+              player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY}px)`
+              player.style.transitionDuration = '0s';
+              isFalling = false;
+              isJumping = false;
             }
         });
     }
-    // collide with blocks when moving right
-    if (isMovingRight) {
-        mapBlocksCollidingData.forEeach( (n) => {
-            if ( (playerPosition[3] === n[2] && playerPosition[2] <= n[3]) && 
-            ( (playerPosition[1] >= n[4] && playerPosition[1] <= [5]) || (playerPosition[5] >= n[4] && playerPosition[1] <= [5]) || (playerPosition[4] >= n[4] && playerPosition[1] <= [5]) )) {
-                console.log('cannot move right!');
-                 collidingWithBlocks = true;
-                 player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY}px)`
-                 player.style.transitionDuration = '0s';
-                 isFalling = false;
-                 isJumping = false;
-            }
-        });
-    }
-}
+} 
 
 
  /* function isCollidingWithFloor() {
