@@ -6,7 +6,7 @@
 #game-container {
         background: darkblue;
         width: 500px;
-        max-height: 100vh;
+        max-height: 90vh;
         height: 600px;
         box-sizing: border-box;
         position: relative;
@@ -15,10 +15,13 @@
 #map-container {
     background: darkblue;
     width: 500px;
-    max-height: 100vh;
+    max-height: 90vh;
     height: 600px;
     box-sizing: border-box;
     position: relative;
+    background-image: url("/images/main-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
 
@@ -32,7 +35,6 @@
     position: absolute;
     box-sizing: border-box;
     z-index: 50;
-    transform: translate3d(0px, 0px, 0px);
 }
 
 .map-square {
@@ -51,7 +53,8 @@
     width: 10px;
     height: 10px;
     position: relative;
-    background: black;
+    background-image: url("/images/clouds.png");
+    background-size: cover;
     float: left;
     z-index: 1;
 }
@@ -102,7 +105,8 @@
     width: 10px;
     height: 10px;
     position: relative;
-    background: rgb(223, 190, 44);
+    background-image: url("/images/dim\ sum.png");
+    background-size: cover;
     float: left;
     z-index: 1;
 }
@@ -131,13 +135,37 @@
 
 #heaven {
     box-sizing: border-box;
+    animation: stretch;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; 
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    border-radius: 50px;
     border: none;
     width: 77px;
     height: 59px;
     position: relative;
-    background:white;
+    background-image: url("../images/heaven.jpg");
+    background-size: cover;
     z-index: 1;
     position: absolute;
-    top: 73px;
+    top: 43px;
     left: 211.5px;
+}
+
+@keyframes stretch {
+    0% {
+        width: 77px;
+        height: 59px;
+    }
+    50% {
+        width: 91px;
+        height: 79px;
+    }
+}
+
+#picture {
+    z-index: 1;
+    background: gold;
 }
