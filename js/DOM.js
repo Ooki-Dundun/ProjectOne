@@ -54,13 +54,13 @@ const mapJS = [
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 'b', 'b', 'b', 'b', 'b', 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 'el', 'b', 'b', 'b', 'b', 'b', 'er', 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 'b', 'b', 'b', 'b', 'b', 'b', 'b', 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', , 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 'el', 'b', 'b', 'b', 'b', 'b', 'er', 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 'el', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'er', 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 'b', 'b', 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
 ]
 
 // access div map container
@@ -72,6 +72,8 @@ mapJS.forEach(n => n.forEach(e => {
     if (e === 'o') {map.innerHTML += `<div class="map-block o"></div>`}
     if (e === 'ts') {map.innerHTML += `<div class="map-block ts" id="${e}"></div>`}
     if (e === 'te') {map.innerHTML += `<div class="map-block ta" id="${e}"></div>`}
+    if (e === 'el') {map.innerHTML += `<div class="map-block el" id="${e}"></div>`}
+    if (e === 'er') {map.innerHTML += `<div class="map-block er" id="${e}"></div>`}
     }));
 
 //Access map items
@@ -118,17 +120,14 @@ function move(e) {
         jumpLeft();
     }
     if (e.key === 'n') {
-        getPositionId('player');
-        //checkIfOnFloor();
-        //checkIfOnBlocks();
-        //jumpRight();
+        jumpRight();
     } 
 }
 
 // Character Motion
 
 function moveRight() {
-    if (isJumping) {
+    if (isJumping || isFalling) {
         console.log('cannot move right while jumping or falling or while blocked!');
         return;
     }
@@ -146,7 +145,7 @@ function moveRight() {
 };
 
 function moveLeft() {
-    if (isJumping) {
+    if (isJumping || isFalling) {
         console.log('cannot move left while jumping or falling or while blocked');
         return;
     }
@@ -172,6 +171,8 @@ function jump() {
     }
     isJumping = true;
     isFalling = false;
+    isOnFloor = false;
+    isOnBlocks = false;
     isMovingLeft = false;
     isMovingRight = false;
     var currentPositionJ = getPositionId('player');
@@ -214,6 +215,8 @@ function jumpRight() {
     }
     isJumping = true;
     isFalling = false;
+    isOnFloor = false;
+    isOnBlocks = false;
     isMovingLeft = false;
     isMovingRight = false;
     var currentPositionJR = getPositionId('player');
@@ -257,6 +260,8 @@ function jumpLeft() {
     }
     isJumping = true;
     isFalling = false;
+    isOnFloor = false;
+    isOnBlocks = false;
     isMovingLeft = false;
     isMovingRight = false;
     var currentPositionJL = getPositionId('player');
@@ -322,41 +327,45 @@ function isCollidingWithBlocks() {
     let mapBlocksCollidingData = getCollidingDataClassName('map-block');
     mapBlocksCollidingData.forEach( (n) => {
         if ( ( (playerPosition[2] >= n[2] && playerPosition[2] <= n[3]) || (playerPosition[3] >= n[2] && playerPosition[3] <= n[3]) ) 
-        && ((playerPosition[4] >= n[4] && playerPosition[4] <= n[5]) || (playerPosition[5] >= n[4] && playerPosition[5] <= n[5]) ) ) {
+        && ( (playerPosition[5] >= n[4] && playerPosition[5] <= n[5]) ) ) {
             console.log(n);
             console.log("player is colliding!!!");
             collidingWithBlocks = true;
             if (isFalling) {
-                if ((playerPosition[5] >= n[4] && playerPosition[5] <= n[5])) {
                   player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[5] - initialY - 15}px)`;
                   player.style.transitionDuration = '0s';
                   isOnBlocks = true;
                   isOnFloor = false;
                   isFalling = false;
-                }
             }
             if (isMovingRight || isMovingLeft) {
-                    if ( (playerPosition[2] >= n[2] && playerPosition[2] <= n[3]) && isMovingLeft ) {
-                            console.log('cannot move left!');
-                            player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY}px)`
-                            player.style.transitionDuration = '0s';
-                    }
-                    if ( (playerPosition[3] >= n[2] && playerPosition[3] <= n[3]) && isMovingRight ) {
-                            console.log("cannot move right!");
-                            player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY}px)`
-                            player.style.transitionDuration = '0s';
-                    }
+                if ( (playerPosition[2] >= n[2] && playerPosition[2] <= n[3]) && isMovingLeft ) {
+                    console.log('cannot move left!');
+                     collidingWithBlocks = true;
+                     player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY}px)`
+                     player.style.transitionDuration = '0s';
+                     collidingWithBlocks = true;
+                }
+                if ( (playerPosition[3] >= n[2] && playerPosition[3] <= n[3]) && isMovingRight ) {
+                    console.log("cannot move right!");
+                    collidingWithBlocks = true;
+                    player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY}px)`
+                    player.style.transitionDuration = '0s';
+                    collidingWithBlocks = true;
+                            
+                }
             }
-                
         } else {
-            console.log('no longer colliding with blocks');
-            collidingWithBlocks = false;
-            return;
+            isOnBlocks = false;
+            //collidingWithBlocks = false;
+        }
+        if (!isOnBlocks && !isOnFloor & !isJumping) {
+            fall();
         }
     });
 }
 
-/* function isCollidingWithFloor() {
+ /* function isCollidingWithFloor() {
     let playerPosition = getPositionId('player');
     let floorCollidingData = getPositionId('floor');
     if ( (isFalling) && (playerPosition[5] <= floorCollidingData[4]) && (playerPosition[5] <= floorCollidingData[5]) ){
@@ -369,47 +378,40 @@ function isCollidingWithBlocks() {
     }
 } */
 
-/* function checkIfOnFloor() {
+function checkIfOnFloor() {
     let playerPosition = getPositionId('player');
     let floorCollidingData = getPositionId('floor');
-    if ( (playerPosition[5] >= floorCollidingData[4]) && (playerPosition[5] <= floorCollidingData[5]) ){
-        console.log('is on floor');
-        isOnFloor = true;
-        isOnBlocks = false;
-        if (isFalling) {
+    if (isFalling) {
+        if ( (playerPosition[5] >= floorCollidingData[4]) && (playerPosition[5] <= floorCollidingData[5]) ){
+            console.log('is on floor');
+            isOnFloor = true;
+            isOnBlocks = false;
             player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[5] - initialY - 10}px)`;
             player.style.transitionDuration = '0s';
-        }
-        return;
-    } else {
-        isOnFloor = false;
-    }
-    if (!isJumping && (!isOnFloor || !isOnBlocks) ) {
-        fall();
-    }
-} 
-
-  function checkIfOnBlocks() {
-    let playerPosition = getPositionId('player');
-    let mapBlocksCollidingData = getCollidingDataClassName('map-block');
-    mapBlocksCollidingData.forEach(n => {
-        if (playerPosition[5] >= n[4] && playerPosition[5] <= n[5]) {
-            console.log('is on blocks');
-            isOnFloor = false;
-            isOnBlocks = true;
-            return;
-        } else {
+            isFalling = false;
+            isJumping - false;
             isOnBlocks = false;
-            fall();
+            isOnFloor = true;
+        } else {
+          fall();
         }
-    }) 
-} */
+    } 
+}
+
+function checkIfOnBlocks() {
+    let playerPosition = getPositionId('player');
+    let mapEdgeLeft= getCollidingDataClassName('map-el');
+    let mapEdgeRight = getCollidingDataClassName('map-er');
+    mapEdgeLeft.forEach(n => {
+        if ( isMovingLeft && playerPosition[0] <= n[2] && playerPosition[2] <= n[2] && playerPosition[5] >= n[4] - 10 && playerPosition[5] <= n[5]) {
+            console.log('falling!')
+        }
+    });
+}
 
 var checkCollision = setInterval( () => {
   isCollidingWithBlocks();
-  //isCollidingWithFloor();
-  //checkIfOnFloor();
-  //checkIfOnBlocks();
+  checkIfOnFloor();
 }, 1);
 
 
@@ -424,6 +426,3 @@ var checkCollision = setInterval( () => {
 
 // every X time, create a Dim Sum that is random between the array of 3 dim sums : red, yellow, xia long bao
 // make it fall on the map
-
-
-// set time interval

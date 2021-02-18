@@ -59,6 +59,28 @@
     z-index: 1;
 }
 
+.el {
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    background: green;
+    float: left;
+    z-index: 1;
+}
+
+.er {
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    background: yellow;
+    float: left;
+    z-index: 1;
+}
+
 #floor {
     width: 500px;
     height: 20px;
