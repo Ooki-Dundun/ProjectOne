@@ -467,14 +467,38 @@ function fallFurther() {
         console.log(isOnFloor, isOnBlocks, isJumping, isFalling)
         fall();
     }
-    if ( (isOnEdgeBlockL && isMovingLeft) || (isOnEdgeBlockR && isMovingRight) ) {
-        console.log(`SHOULD FALL`);
-        fall();
+    if (isOnEdgeBlockL && isMovingLeft) {
+        var currentPositionR = getPositionId('player');
+        var translateXR = currentPositionR[0] - 25 - initialX;
+        var translateYR = currentPositionR[1] - initialY;
+        player.style.transform = `translate(${translateXR}px, ${translateYR}px)`;
+        player.style.transitionTimingFunction = 'linear';
+        player.style.transitionDuration = '0.2s';
+        setTimeout( () => {
+            isOnBlocks = false;
+            isOnEdgeBlockL = false;
+            }, 200);
+    }
+    if (isOnEdgeBlockR && isMovingRight) {
+        var currentPositionR = getPositionId('player');
+        var translateXR = currentPositionR[0] + 25 - initialX;
+        var translateYR = currentPositionR[1] - initialY;
+        player.style.transform = `translate(${translateXR}px, ${translateYR}px)`;
+        player.style.transitionTimingFunction = 'linear';
+        player.style.transitionDuration = '0.2s';
+        isOnEdgeBlockR = false;
+        setTimeout( () => {
+        isOnBlocks = false;
+        isOnEdgeBlockR = false;
+        }, 200);
     }
 }
 
+// create more el and say if on el, fall and not collide!!!
+
 var checkCollision = setInterval( () => {
   isColliding();
+  checkIfOnEdge();
   fallFurther();
 }, 1);
 
