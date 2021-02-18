@@ -412,12 +412,11 @@ function getCollidingDataClassName(className) {
     var mapELData = getCollidingDataClassName('el');
     console.log('YOOOOOO');
     console.log(mapELData);
-    console.log(playerPosition);
     var currentEL = 0;
     mapELData.forEach( (n) => {
         if (playerPosition[0] <= n[3] && playerPosition[0] >= n[2] && playerPosition[5] <= n[5] && playerPosition[5] - 3 >= n[4] + 2) {
             currentEL = n;
-            console.log(`current edge is ${currentEL}`);
+            console.log(`current edge is ${currentEL}`)
         }
     })
 
@@ -450,7 +449,7 @@ var checkCollision = setInterval( () => {
   isColliding();
   fallFurther();
   //checkIfOnBlocks();
-}, 5000);
+}, 1);
 
 console.log('START', isOnFloor, isOnBlocks, isJumping, isFalling);
 
