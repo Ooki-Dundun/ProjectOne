@@ -3,8 +3,17 @@
     margin: 0;
 }
 
+#game-container {
+        background: darkblue;
+        width: 500px;
+        max-height: 100vh;
+        height: 600px;
+        box-sizing: border-box;
+        position: relative;
+}
+
 #map-container {
-    background: red;
+    background: darkblue;
     width: 500px;
     max-height: 100vh;
     height: 600px;
@@ -14,7 +23,7 @@
 }
 
 #player {
-    background: yellow;
+    background: white;
     border: 1px solid black;
     width: 15px;
     height: 20px;
@@ -31,14 +40,14 @@
     width: 10px;
     height: 10px;
     position: relative;
-    background: blue;
+    background: gray;
     float: left;
     z-index: -10;
 }
 
 .map-block {
     box-sizing: border-box;
-    border: 1px solid black;
+    border: none;
     width: 10px;
     height: 10px;
     position: relative;
@@ -50,7 +59,7 @@
 
 .o {
     box-sizing: border-box;
-    border: 1px solid black;
+    border: none;
     width: 10px;
     height: 10px;
     position: relative;
@@ -61,7 +70,7 @@
 
 .el {
     box-sizing: border-box;
-    border: 1px solid black;
+    border: none;
     width: 10px;
     height: 10px;
     position: relative;
@@ -72,11 +81,11 @@
 
 .er {
     box-sizing: border-box;
-    border: 1px solid black;
+    border: none;
     width: 10px;
     height: 10px;
     position: relative;
-    background: yellow;
+    background: rgb(151, 30, 101);
     float: left;
     z-index: 1;
 }
@@ -84,5 +93,51 @@
 #floor {
     width: 500px;
     height: 20px;
-    background: green;
+    background: rgb(47, 68, 255);
+}
+
+.dm {
+    box-sizing: border-box;
+    border: none;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    background: rgb(223, 190, 44);
+    float: left;
+    z-index: 1;
+}
+
+.ts {
+    box-sizing: border-box;
+    border: none;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    background: rgb(145, 26, 115);
+    float: left;
+    z-index: 1;
+}
+
+.te {
+    box-sizing: border-box;
+    border: none;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    background: rgb(221, 6, 192);
+    float: left;
+    z-index: 1;
+}
+
+#heaven {
+    box-sizing: border-box;
+    border: none;
+    width: 77px;
+    height: 59px;
+    position: relative;
+    background:white;
+    z-index: 1;
+    position: absolute;
+    top: 73px;
+    left: 211.5px;
 }
