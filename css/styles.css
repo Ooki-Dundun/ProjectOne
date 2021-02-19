@@ -268,3 +268,10 @@
     background-image: url('/images/jumping\ left.png');
     background-size: cover;
 }
+
+.dim-sum {
+    background-image: url('/images/dim\ sum\ jump.png');
+    background-size: cover;
+    width: 20px;
+    height: 30px;
+}

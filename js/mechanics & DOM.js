@@ -102,6 +102,7 @@ var isOnEdgeBlockL = false;
 var isOnEdgeBlockR = false;
 var isJumpingRight = false;
 var isJumpingLeft = false;
+var isDimSum = false;
 
 //  DOM
 function changePlayer() {
@@ -124,21 +125,32 @@ function changePlayer() {
         player.classList.remove('moving-right');
         player.classList.remove('jumping');
         player.classList.remove('not-moving');
+        player.classList.remove('dim-sum');
         player.classList.add('falling');
     }
-    if (isJumping) {
+    if (isJumping && !isDimSum) {
         player.classList.remove('moving-left');
         player.classList.remove('moving-right');
         player.classList.remove('falling');
         player.classList.remove('not-moving');
+        player.classList.remove('dim-sum');
         player.classList.add('jumping');
     }
-    if (!isJumping && !isFalling && !isMovingRight && !isMovingLeft) {
+    if (!isJumping && !isFalling && !isMovingRight && !isMovingLeft && !isDimSum) {
         player.classList.remove('moving-left');
         player.classList.remove('moving-right');
         player.classList.remove('falling');
         player.classList.remove('jumping');
+        player.classList.remove('dim-sum');
         player.classList.add('not-moving');
+    }
+    if (isDimSum) {
+        player.classList.remove('moving-left');
+        player.classList.remove('moving-right');
+        player.classList.remove('falling');
+        player.classList.remove('jumping');
+        player.classList.remove('not-moving');
+        player.classList.add('dim-sum');
     }
 }
 
@@ -247,6 +259,7 @@ function jump() {
 
 function fall() {
     isFalling = true;
+    isDimSum = false;
     isJumping = false;
     isMovingLeft = false;
     isMovingRight = false;
@@ -592,9 +605,18 @@ function dimSum () {
         isOnEdgeBlockL = false;
         isOnEdgeBlockR = false;
         isOnFloor = false;
+        isDimSum = true;
         setTimeout( () => {
             fall();
-        }, 5000);
+        }, 5500);
+    }
+}
+
+function checkHeaven() {
+    var playerPosition = getPositionId('player');
+    var heavenData = getPositionId('heaven');
+    if (playerPosition[0] >= heavenData[2] && playerPosition[0] <= heavenData[3] && playerPosition[1] <= heavenData[5] && playerPosition[1] >= heavenData[4]) {
+        console.log('PIGGY IS SAFE!!!!!');
     }
 }
 
@@ -608,6 +630,7 @@ var checkCollision = setInterval( () => {
   collidingWithMap();
   teleport();
   dimSum();
+  checkHeaven();
 }, 1);
 
 //console.log('START', isOnFloor, isOnBlocks, isJumping, isFalling);
