@@ -77,7 +77,9 @@
     width: 10px;
     height: 10px;
     position: relative;
-    background: green;
+    border-radius: 25px;
+    background-image: url('/images/edge.png');
+    background-repeat: no-repeat;
     float: left;
     z-index: 1;
 }
@@ -88,7 +90,9 @@
     width: 10px;
     height: 10px;
     position: relative;
-    background: rgb(151, 30, 101);
+    border-radius: 25px;
+    background-image: url('/images/edge.png');
+    background-repeat: no-repeat;
     float: left;
     z-index: 1;
 }
@@ -96,7 +100,8 @@
 #floor {
     width: 500px;
     height: 20px;
-    background: rgb(47, 68, 255);
+    background-image: url("/images/roof.png");
+    background-repeat: repeat-x;
 }
 
 .dm {
@@ -146,7 +151,7 @@
     width: 77px;
     height: 59px;
     position: relative;
-    background-image: url("../images/heaven.jpg");
+    background-image: url("/images/heaven.png");
     background-size: cover;
     z-index: 1;
     position: absolute;
@@ -163,9 +168,4 @@
         width: 91px;
         height: 79px;
     }
-}
-
-#picture {
-    z-index: 1;
-    background: gold;
 }
