@@ -240,6 +240,8 @@
     left: 100px;
     top: 150px;
     z-index: -40;
+    background-image: url('/images/you-win.jpg');
+    background-size: cover;
 }
 
 #player {

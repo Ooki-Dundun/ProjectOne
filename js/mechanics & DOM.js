@@ -605,8 +605,8 @@ function dimSum () {
     var playerPosition = getPositionId('player');
     var dimData = getCollidingDataClassName('ds');
     if ( (playerPosition[0] >= dimData[0][2]) && (playerPosition[0] <= dimData[3][3]) && (playerPosition[1] >= dimData[0][4]) && (playerPosition[1] <= dimData[3][5]) ) {
-        console.log(dimData);
-        console.log("JUMPING!!!!");
+        //console.log(dimData);
+        //console.log("JUMPING!!!!");
         player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY - 320}px)`;
         player.style.transitionDuration = '5s';
         isJumping = false;
@@ -632,7 +632,8 @@ function checkHeaven() {
     var playerPosition = getPositionId('player');
     var heavenData = getPositionId('heaven');
     if (playerPosition[0] >= heavenData[2] && playerPosition[0] <= heavenData[3] && playerPosition[1] <= heavenData[5] && playerPosition[1] >= heavenData[4]) {
-        console.log('PIGGY IS SAFE!!!!!');
+        //console.log('PIGGY IS SAFE!!!!!');
+        document.getElementById('win').style.zIndex = '80';
     }
 }
 
