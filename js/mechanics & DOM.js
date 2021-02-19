@@ -111,6 +111,7 @@ function changePlayer() {
         player.classList.remove('falling');
         player.classList.remove('jumping');
         player.classList.remove('not-moving');
+        player.classList.remove('dim-sum');
         player.classList.add('moving-left');
     }
     if (isMovingRight) {
@@ -118,6 +119,7 @@ function changePlayer() {
         player.classList.remove('falling');
         player.classList.remove('jumping');
         player.classList.remove('not-moving');
+        player.classList.remove('dim-sum');
         player.classList.add('moving-right');
     }
     if (isFalling) {
@@ -167,7 +169,6 @@ function move(e) {
     }
     if (e.key === 'v' ) {
         moveLeft();
-
     } 
     if (e.key === 'b') {
         moveRight();
@@ -177,10 +178,7 @@ function move(e) {
     }
     if (e.key === 'n') {
         jumpRight();
-    } 
-    if (e.key === 'k') {
-        dimSum();
-    } 
+    }
 }
 
 // Character Motion
@@ -516,7 +514,7 @@ function checkIfOnEdge() {
 }
 
 function fallFurther() {
-    if (!isOnFloor && !isOnBlocks && !isJumping && !isFalling) {
+    if (!isOnFloor && !isOnBlocks && !isJumping && !isFalling && !isDimSum) {
         //console.log('falling!')
         //console.log(isOnFloor, isOnBlocks, isJumping, isFalling)
         fall();
@@ -597,7 +595,7 @@ function dimSum () {
         console.log("JUMPING!!!!");
         player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY - 320}px)`;
         player.style.transitionDuration = '5s';
-        isJumping = true;
+        isJumping = false;
         isOnBlocks = false;
         isFalling = false;
         isMovingLeft = false;
