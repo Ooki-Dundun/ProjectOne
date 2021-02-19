@@ -28,7 +28,7 @@ const mapJS = [
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 'te', 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 'el', 'b', 'b', 'b', 'b', 'b', 'er', 43, 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4, 5, 'te', 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 'el', 'b', 'b', 'b', 'b', 'b', 'er', 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
@@ -85,6 +85,51 @@ var mapEL = document.getElementsByClassName('map-el');
 var mapER = document.getElementsByClassName('map-er');
 
 
+//  DOM
+function changePlayer() {
+    if (isMovingLeft) {
+        player.classList.remove('moving-right');
+        player.classList.remove('falling');
+        player.classList.remove('jumping');
+        player.classList.remove('not-moving');
+        player.classList.add('moving-left');
+    }
+    if (isMovingRight) {
+        player.classList.remove('moving-left');
+        player.classList.remove('falling');
+        player.classList.remove('jumping');
+        player.classList.remove('not-moving');
+        player.classList.add('moving-right');
+    }
+    if (isFalling) {
+        player.classList.remove('moving-left');
+        player.classList.remove('moving-right');
+        player.classList.remove('jumping');
+        player.classList.remove('not-moving');
+        player.classList.add('falling');
+    }
+    if (isJumping) {
+        player.classList.remove('moving-left');
+        player.classList.remove('moving-right');
+        player.classList.remove('falling');
+        player.classList.remove('not-moving');
+        player.classList.add('jumping');
+    }
+    if (!isJumping && !isFalling && !isMovingRight && !isMovingLeft) {
+        player.classList.remove('moving-left');
+        player.classList.remove('moving-right');
+        player.classList.remove('falling');
+        player.classList.remove('jumping');
+        player.classList.add('not-moving');
+    }
+
+}
+
+console.log(player.classList);
+
+
+// MECHANICS
+
 
 //Access player div and set important player variables
 var player = document.getElementById('player');
@@ -100,6 +145,8 @@ var isOnFloor = true;
 var isOnBlocks = false;
 var isOnEdgeBlockL = false;
 var isOnEdgeBlockR = false;
+var isJumpingRight = false;
+var isJumpingLeft = false;
 
 
 // Event Listeners For Character Motion
