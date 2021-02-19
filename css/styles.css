@@ -26,7 +26,7 @@
     height: 600px;
     box-sizing: border-box;
     position: relative;
-    background-image: url("/images/main-background.png");
+    background-image: rgb(114, 179, 233);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -80,6 +80,10 @@
 
 .el {
     box-sizing: border-box;
+    animation-name: rotateCounterClockWise;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     border: none;
     width: 10px;
     height: 10px;
@@ -93,6 +97,10 @@
 
 .er {
     box-sizing: border-box;
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     border: none;
     width: 10px;
     height: 10px;
@@ -104,6 +112,24 @@
     z-index: 1;
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateCounterClockWise {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 #floor {
     width: 500px;
     height: 20px;
@@ -111,7 +137,7 @@
     background-repeat: repeat-x;
 }
 
-.dm {
+.ds {
     box-sizing: border-box;
     border: none;
     width: 10px;
@@ -126,6 +152,10 @@
 
 .ts {
     box-sizing: border-box;
+    animation-name: teleport;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     border: none;
     width: 10px;
     height: 10px;
@@ -138,6 +168,10 @@
 }
 
 .te {
+    animation-name: teleport;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     box-sizing: border-box;
     border: none;
     width: 10px;
@@ -150,6 +184,24 @@
     z-index: 1;
 }
 
+@keyframes teleport {
+    0% {
+        transform: translateX(10px);
+    }
+    20% {
+        transform: translateX(13px);
+    }
+    50%{
+        transform: translateX(9px);
+    }
+    70% {
+        transform: translateX(7px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
 #heaven {
     box-sizing: border-box;
     animation: stretch;
@@ -160,25 +212,25 @@
     animation-iteration-count: infinite;
     border-radius: 50px;
     border: none;
-    width: 77px;
-    height: 59px;
+    width: 97px;
+    height: 79px;
     position: relative;
     background-image: url("/images/heaven.png");
     background-size: cover;
     z-index: 1;
     position: absolute;
     top: 43px;
-    left: 211.5px;
+    left: 207.5px;
 }
 
 @keyframes stretch {
     0% {
-        width: 77px;
-        height: 59px;
+        width: 107px;
+        height: 89px;
     }
     50% {
-        width: 91px;
-        height: 79px;
+        width: 111px;
+        height: 99px;
     }
 }
 
@@ -198,7 +250,7 @@
 }
 
 .falling {
-        background-image: url('/images/falling1.png');
+        background-image: url('/images/falling2.png');
         background-size: cover;
 }
 

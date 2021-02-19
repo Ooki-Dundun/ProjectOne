@@ -45,8 +45,8 @@ const mapJS = [
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 'el', 'b', 'b', 'b', 'b', 'b', 'er', 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 'ts', 'ts', 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4, 5, 6, 'dm', 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 'ts', 'ts', 29, 30, 31, 32, 33, 34, 35, 36, 'el', 'b', 'b', 'b', 'b', 'b', 'er', 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4, 5, 6, 'ds', 'ds', 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 'ts', 'ts', 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4, 5, 6, 'ds', 'ds', 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 'ts', 'ts', 29, 30, 31, 32, 33, 34, 35, 36, 'el', 'b', 'b', 'b', 'b', 'b', 'er', 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 'el', 'b', 'b', 'b', 'b', 'b', 'er', 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 'el', 'b', 'b', 'er', 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
@@ -54,8 +54,8 @@ const mapJS = [
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 'el', 'b', 'b', 'b', 'b', 'b', 'er', 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
-    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 'el', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'el', 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 'el', 'b', 'b', 'b', 'b', 'b', 'b','b', 'b', 'er', 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
     [ 1, 2, 3, 4, 5, 6, 7, 8, 'el', 'b', 'b', 'er', 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
@@ -71,11 +71,12 @@ mapJS.forEach(n => n.forEach(e => {
     if (e === 'te') {map.innerHTML += `<div class="te" id="${e}"></div>`}
     if (e === 'el') {map.innerHTML += `<div class="map-block el" id="${e}"></div>`}
     if (e === 'er') {map.innerHTML += `<div class="map-block er" id="${e}"></div>`}
-    if (e === 'dm') {map.innerHTML += `<div class="dm" id="${e}"></div>`}
+    if (e === 'ds') {map.innerHTML += `<div class="ds" id="${e}"></div>`}
     }));
 
 //Access player div and map item divs
 var player = document.getElementById('player');
+var mapContainer = document.getElementById('map-container');
 var floor = document.getElementById('floor');
 var maSquares = document.getElementsByClassName('map-square');
 var mapBlocks = document.getElementsByClassName('map-block');
@@ -85,9 +86,6 @@ var mapTE = document.getElementsByClassName('map-te');
 var mapEL = document.getElementsByClassName('map-el');
 var mapER = document.getElementsByClassName('map-er');
 var startDive = document.getElementById('start');
-console.log(start.classList);
-start.classList.add('yo');
-console.log(start.classList);
 
 //Set important player variables
 const playerStart = document.getElementById('player');
@@ -113,7 +111,6 @@ function changePlayer() {
         player.classList.remove('jumping');
         player.classList.remove('not-moving');
         player.classList.add('moving-left');
-        console.log('moving left', player.classList);
     }
     if (isMovingRight) {
         player.classList.remove('moving-left');
@@ -121,7 +118,6 @@ function changePlayer() {
         player.classList.remove('jumping');
         player.classList.remove('not-moving');
         player.classList.add('moving-right');
-        console.log('moving right', player.classList);
     }
     if (isFalling) {
         player.classList.remove('moving-left');
@@ -129,7 +125,6 @@ function changePlayer() {
         player.classList.remove('jumping');
         player.classList.remove('not-moving');
         player.classList.add('falling');
-        console.log('falling', player.classList);
     }
     if (isJumping) {
         player.classList.remove('moving-left');
@@ -137,7 +132,6 @@ function changePlayer() {
         player.classList.remove('falling');
         player.classList.remove('not-moving');
         player.classList.add('jumping');
-        console.log('jumping', player.classList);
     }
     if (!isJumping && !isFalling && !isMovingRight && !isMovingLeft) {
         player.classList.remove('moving-left');
@@ -145,12 +139,8 @@ function changePlayer() {
         player.classList.remove('falling');
         player.classList.remove('jumping');
         player.classList.add('not-moving');
-        console.log('not-moving', player.classList);
     }
 }
-
-console.log(player.classList);
-
 
 // MECHANICS
 
@@ -177,7 +167,7 @@ function move(e) {
         jumpRight();
     } 
     if (e.key === 'k') {
-        checkIfOnEdge();
+        dimSum();
     } 
 }
 
@@ -185,7 +175,7 @@ function move(e) {
 
 function moveRight() {
     if (isJumping || isFalling) {
-        console.log('cannot move right while jumping or falling or while blocked!');
+        //console.log('cannot move right while jumping or falling or while blocked!');
         return;
     }
     if (isOnEdgeBlockL) {
@@ -324,7 +314,7 @@ function fallRight() {
     isMovingRight = false;
     isOnEdgeBlockL = false;
     isOnEdgeBlockR = false;
-    console.log('FALLING RIGHT', isOnFloor, isOnBlocks, isJumping, isFalling);
+    //console.log('FALLING RIGHT', isOnFloor, isOnBlocks, isJumping, isFalling);
     var currentPositionFR = getPositionId('player');
     var translateXFR = currentPositionFR[0] + 30 - initialX;
     var translateYFR = currentPositionFR[1] + 53 - initialY;
@@ -346,7 +336,7 @@ function jumpLeft() {
     isMovingRight = false;
     isOnEdgeBlockL = false;
     isOnEdgeBlockR = false;
-    console.log('JUMPING LEFT', isOnFloor, isOnBlocks, isJumping, isFalling);
+    //console.log('JUMPING LEFT', isOnFloor, isOnBlocks, isJumping, isFalling);
     var currentPositionJL = getPositionId('player');
     var translateXJL = currentPositionJL[0] - 50 - initialX;
     var translateYJL = currentPositionJL[1] - 53 - initialY;
@@ -361,7 +351,7 @@ function jumpLeft() {
 function moveJLeft() {
     isFalling = true;
     isJumping = true;
-    console.log('MJL', isOnFloor, isOnBlocks, isJumping, isFalling);
+    //console.log('MJL', isOnFloor, isOnBlocks, isJumping, isFalling);
     var currentPositionMJL = getPositionId('player');
     var translateXMJL = currentPositionMJL[0] - 9 - initialX;
     var translateYMJL = currentPositionMJL[1] - initialY;
@@ -377,7 +367,7 @@ function fallLeft() {
     isMovingRight = false;
     isOnEdgeBlockL = false;
     isOnEdgeBlockR = false;
-    console.log('FALLING LEFT', isOnFloor, isOnBlocks, isJumping, isFalling);
+    //console.log('FALLING LEFT', isOnFloor, isOnBlocks, isJumping, isFalling);
     var currentPositionFL = getPositionId('player');
     var translateYFL = currentPositionFL[1] + 53 - initialY;
     var translateXFL = currentPositionFL[0] - 30 - initialX;
@@ -427,9 +417,9 @@ function getCollidingDataClassName(className) {
                 isMovingLeft = false;
                 isOnEdgeBlockL = false;
                 isOnEdgeBlockR = false;
-                console.log(`playerPosition is ${playerPosition}`);
-                console.log(`n is ${n}`);
-                console.log('has landed on block', isOnFloor, isOnBlocks, isJumping, isFalling);
+               // console.log(`playerPosition is ${playerPosition}`);
+               // console.log(`n is ${n}`);
+               // console.log('has landed on block', isOnFloor, isOnBlocks, isJumping, isFalling);
                 player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[5] - initialY - 15}px)`;
                 player.style.transitionDuration = '0s';
                 
@@ -445,7 +435,7 @@ function getCollidingDataClassName(className) {
             isMovingRight = false;
             isOnEdgeBlockL = false;
             isOnEdgeBlockR = false;
-            console.log('has landed on floor!!!', isOnFloor, isOnBlocks, isJumping, isFalling);
+            //console.log('has landed on floor!!!', isOnFloor, isOnBlocks, isJumping, isFalling);
             player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[5] - initialY - 10}px)`;
             player.style.transitionDuration = '0s';
         }
@@ -488,10 +478,10 @@ function checkIfOnEdge() {
         //console.log(playerPosition[3] <= n[3], playerPosition[3] >= n[2], 'or', playerPosition[2] <= n[3], playerPosition[2] >= n[2], 'or', playerPosition[0] <= n[3], playerPosition[0] >= n[3], 'and', playerPosition[5] <= n[1], playerPosition[5] >= (n[4] - 6) )
         if ( ( (playerPosition[3] <= n[3] && playerPosition[3] >= n[2]) || (playerPosition[2] <= n[3] && playerPosition[2] >= n[2]) || (playerPosition[0] <= n[3] && playerPosition[0] >= n[3]) ) && (playerPosition[5] <= n[1] && playerPosition[5] >= (n[4] - 6)) ) {
             currentEL = n;
-            console.log(`current edge is ${currentEL}`)
+            //console.log(`current edge is ${currentEL}`)
             isOnEdgeBlockL = true;
             isOnEdgeBlockR = false;
-            console.log(isOnEdgeBlockL, isOnEdgeBlockR);
+            //console.log(isOnEdgeBlockL, isOnEdgeBlockR);
         } 
     })
     // check right edges
@@ -504,18 +494,18 @@ function checkIfOnEdge() {
         //console.log(playerPosition[3] <= n[3], playerPosition[3] >= n[2], 'or', playerPosition[2] <= n[3], playerPosition[2] >= n[2], 'or', playerPosition[0] <= n[3], playerPosition[0] >= n[3], 'and', playerPosition[5] <= n[1], playerPosition[5] >= (n[4] - 6) )
         if ( ( (playerPosition[3] <= n[3] && playerPosition[3] >= n[2]) || (playerPosition[2] <= n[3] && playerPosition[2] >= n[2]) || (playerPosition[0] <= n[3] && playerPosition[0] >= n[3]) ) && (playerPosition[5] <= n[1] && playerPosition[5] >= (n[4] - 6)) ) {
             currentER = n;
-            console.log(`current edge is ${currentER}`)
+            //console.log(`current edge is ${currentER}`)
             isOnEdgeBlockR = true;
             isOnEdgeBlockL = false;
-            console.log(isOnEdgeBlockL, isOnEdgeBlockR);
+            //console.log(isOnEdgeBlockL, isOnEdgeBlockR);
         } 
     })
 }
 
 function fallFurther() {
     if (!isOnFloor && !isOnBlocks && !isJumping && !isFalling) {
-        console.log('falling!')
-        console.log(isOnFloor, isOnBlocks, isJumping, isFalling)
+        //console.log('falling!')
+        //console.log(isOnFloor, isOnBlocks, isJumping, isFalling)
         fall();
     }
     if (isOnEdgeBlockL && isMovingLeft) {
@@ -545,6 +535,69 @@ function fallFurther() {
     }
 }
 
+function collidingWithMap() {
+    var mapData = getPositionId('map-container');
+    var playerPosition = getPositionId('player');
+    if ( (isMovingLeft) && playerPosition[2] <= mapData[2] + 250) {
+        //console.log('COLLINDING WITH MAP');
+        player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY}px)`
+        player.style.transitionDuration = '0s';
+        
+    }
+    if ( (isMovingRight) && playerPosition[3] >= mapData[3] + 235) {
+        //console.log('COLLINDING WITH MAP');
+        player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY}px)`
+        player.style.transitionDuration = '0s';
+    }
+
+    if ( (isJumping || isFalling) && (playerPosition[2] <= mapData[2] + 250) ) {
+        player.style.transform = `translate(${playerPosition[0] - initialX + 10}px, ${playerPosition[1] - initialY}px)`
+        player.style.transitionDuration = '0s';
+        fall();
+    }
+    if ( (isJumping || isFalling) && (playerPosition[3] >= mapData[3] + 235) ) {
+        player.style.transform = `translate(${playerPosition[0] - initialX - 10}px, ${playerPosition[1] - initialY}px)`
+        player.style.transitionDuration = '0s';
+        fall();
+    }
+}
+
+// only works if 4 * ts divs in map. Otherwise, to adjust.
+function teleport() {
+    var playerPosition = getPositionId('player');
+    var tsData = getCollidingDataClassName('ts');
+    //var teData = getCollidingDataClassName('te');
+    //console.log(tsData);
+    //console.log(teData);
+    if ( (playerPosition[0] >= tsData[0][2]) && (playerPosition[0] <= tsData[3][3]) && (playerPosition[1] >= tsData[0][4]) && (playerPosition[1] <= tsData[3][5]) ) {
+        console.log("TELEPORTING!!!!")
+        player.style.transform = `translate(${playerPosition[0] - initialX - 215}px, ${playerPosition[1] - initialY - 175}px)`
+        player.style.transitionDuration = '0s';
+    }
+}
+// // only works if 4 * ds divs in map. Otherwise, to adjust.
+function dimSum () {
+    var playerPosition = getPositionId('player');
+    var dimData = getCollidingDataClassName('ds');
+    if ( (playerPosition[0] >= dimData[0][2]) && (playerPosition[0] <= dimData[3][3]) && (playerPosition[1] >= dimData[0][4]) && (playerPosition[1] <= dimData[3][5]) ) {
+        console.log(dimData);
+        console.log("JUMPING!!!!");
+        player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY - 320}px)`;
+        player.style.transitionDuration = '5s';
+        isJumping = true;
+        isOnBlocks = false;
+        isFalling = false;
+        isMovingLeft = false;
+        isMovingRight = false;
+        isOnEdgeBlockL = false;
+        isOnEdgeBlockR = false;
+        isOnFloor = false;
+        setTimeout( () => {
+            fall();
+        }, 5000);
+    }
+}
+
 // create more el and say if on el, fall and not collide!!!
 
 var checkCollision = setInterval( () => {
@@ -552,17 +605,10 @@ var checkCollision = setInterval( () => {
   checkIfOnEdge();
   fallFurther();
   changePlayer();
+  collidingWithMap();
+  teleport();
+  dimSum();
 }, 1);
 
 //console.log('START', isOnFloor, isOnBlocks, isJumping, isFalling);
 
-
-
-// set interval
-
-//chrono
-
-// Dim Sum Falling
-
-// every X time, create a Dim Sum that is random between the array of 3 dim sums : red, yellow, xia long bao
-// make it fall on the map
