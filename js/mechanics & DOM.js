@@ -74,7 +74,8 @@ mapJS.forEach(n => n.forEach(e => {
     if (e === 'dm') {map.innerHTML += `<div class="dm" id="${e}"></div>`}
     }));
 
-//Access map items
+//Access player div and map item divs
+var player = document.getElementById('player');
 var floor = document.getElementById('floor');
 var maSquares = document.getElementsByClassName('map-square');
 var mapBlocks = document.getElementsByClassName('map-block');
@@ -83,56 +84,12 @@ var mapTS = document.getElementsByClassName('map-ts');
 var mapTE = document.getElementsByClassName('map-te');
 var mapEL = document.getElementsByClassName('map-el');
 var mapER = document.getElementsByClassName('map-er');
+var startDive = document.getElementById('start');
+console.log(start.classList);
+start.classList.add('yo');
+console.log(start.classList);
 
-
-//  DOM
-function changePlayer() {
-    if (isMovingLeft) {
-        player.classList.remove('moving-right');
-        player.classList.remove('falling');
-        player.classList.remove('jumping');
-        player.classList.remove('not-moving');
-        player.classList.add('moving-left');
-    }
-    if (isMovingRight) {
-        player.classList.remove('moving-left');
-        player.classList.remove('falling');
-        player.classList.remove('jumping');
-        player.classList.remove('not-moving');
-        player.classList.add('moving-right');
-    }
-    if (isFalling) {
-        player.classList.remove('moving-left');
-        player.classList.remove('moving-right');
-        player.classList.remove('jumping');
-        player.classList.remove('not-moving');
-        player.classList.add('falling');
-    }
-    if (isJumping) {
-        player.classList.remove('moving-left');
-        player.classList.remove('moving-right');
-        player.classList.remove('falling');
-        player.classList.remove('not-moving');
-        player.classList.add('jumping');
-    }
-    if (!isJumping && !isFalling && !isMovingRight && !isMovingLeft) {
-        player.classList.remove('moving-left');
-        player.classList.remove('moving-right');
-        player.classList.remove('falling');
-        player.classList.remove('jumping');
-        player.classList.add('not-moving');
-    }
-
-}
-
-console.log(player.classList);
-
-
-// MECHANICS
-
-
-//Access player div and set important player variables
-var player = document.getElementById('player');
+//Set important player variables
 const playerStart = document.getElementById('player');
 const initialPosition = playerStart.getBoundingClientRect();
 const initialX = initialPosition.x;
@@ -148,6 +105,54 @@ var isOnEdgeBlockR = false;
 var isJumpingRight = false;
 var isJumpingLeft = false;
 
+//  DOM
+function changePlayer() {
+    if (isMovingLeft) {
+        player.classList.remove('moving-right');
+        player.classList.remove('falling');
+        player.classList.remove('jumping');
+        player.classList.remove('not-moving');
+        player.classList.add('moving-left');
+        console.log('moving left', player.classList);
+    }
+    if (isMovingRight) {
+        player.classList.remove('moving-left');
+        player.classList.remove('falling');
+        player.classList.remove('jumping');
+        player.classList.remove('not-moving');
+        player.classList.add('moving-right');
+        console.log('moving right', player.classList);
+    }
+    if (isFalling) {
+        player.classList.remove('moving-left');
+        player.classList.remove('moving-right');
+        player.classList.remove('jumping');
+        player.classList.remove('not-moving');
+        player.classList.add('falling');
+        console.log('falling', player.classList);
+    }
+    if (isJumping) {
+        player.classList.remove('moving-left');
+        player.classList.remove('moving-right');
+        player.classList.remove('falling');
+        player.classList.remove('not-moving');
+        player.classList.add('jumping');
+        console.log('jumping', player.classList);
+    }
+    if (!isJumping && !isFalling && !isMovingRight && !isMovingLeft) {
+        player.classList.remove('moving-left');
+        player.classList.remove('moving-right');
+        player.classList.remove('falling');
+        player.classList.remove('jumping');
+        player.classList.add('not-moving');
+        console.log('not-moving', player.classList);
+    }
+}
+
+console.log(player.classList);
+
+
+// MECHANICS
 
 // Event Listeners For Character Motion
 
@@ -190,7 +195,7 @@ function moveRight() {
     isMovingLeft = false;
     isJumping = false;
     isFalling = false;
-    console.log('MOVING RIGHT', isOnFloor, isOnBlocks, isJumping, isFalling);
+    //console.log('MOVING RIGHT', isOnFloor, isOnBlocks, isJumping, isFalling);
     var currentPositionR = getPositionId('player');
     var translateXR = currentPositionR[0] + 25 - initialX;
     var translateYR = currentPositionR[1] - initialY;
@@ -204,7 +209,7 @@ function moveRight() {
 
 function moveLeft() {
     if (isJumping || isFalling) {
-        console.log('cannot move left while jumping or falling or while blocked');
+        //console.log('cannot move left while jumping or falling or while blocked');
         return;
     }
     if (isOnEdgeBlockR) {
@@ -214,7 +219,7 @@ function moveLeft() {
     isMovingRight = false;
     isJumping = false;
     isFalling = false;
-    console.log('MOVING LEFT', isOnFloor, isOnBlocks, isJumping, isFalling);
+    //console.log('MOVING LEFT', isOnFloor, isOnBlocks, isJumping, isFalling);
     var currentPositionL = getPositionId('player');
     var translateXL = currentPositionL[0] - 25 - initialX;
     var translateYL = currentPositionL[1] - initialY;
@@ -230,7 +235,7 @@ function moveLeft() {
 
 function jump() {
     if (isJumping || isFalling) {
-        console.log('cannot double jump or jump while falling');
+        //console.log('cannot double jump or jump while falling');
         return;
     }
     isJumping = true;
@@ -239,7 +244,7 @@ function jump() {
     isOnBlocks = false;
     isMovingLeft = false;
     isMovingRight = false;
-    console.log('JUMPING', isOnFloor, isOnBlocks, isJumping, isFalling);
+    //console.log('JUMPING', isOnFloor, isOnBlocks, isJumping, isFalling);
     var currentPositionJ = getPositionId('player');
     var translateXJ = currentPositionJ[0] - initialX;
     var translateYJ = currentPositionJ[1] - 53 - initialY;
@@ -257,7 +262,7 @@ function fall() {
     isMovingRight = false;
     isOnEdgeBlockL = false;
     isOnEdgeBlockR = false;
-    console.log('FALLING', isOnFloor, isOnBlocks, isJumping, isFalling);
+    //console.log('FALLING', isOnFloor, isOnBlocks, isJumping, isFalling);
     var currentPositionF = getPositionId('player');
     var translateXJ = currentPositionF[0] - initialX;
     var translateYJ = currentPositionF[1] + 53 - initialY;
@@ -277,7 +282,7 @@ function changeJumpAndFallToFalse() {
 
 function jumpRight() {
     if (isJumping || isFalling) {
-        console.log('cannot double jump or jump while falling');
+        //console.log('cannot double jump or jump while falling');
         return;
     }
     isJumping = true;
@@ -289,7 +294,7 @@ function jumpRight() {
     isOnEdgeBlockL = false;
     isOnEdgeBlockR = false;
     var currentPositionJR = getPositionId('player');
-    console.log('JUMPING RIGHT', isOnFloor, isOnBlocks, isJumping, isFalling);
+    //console.log('JUMPING RIGHT', isOnFloor, isOnBlocks, isJumping, isFalling);
     var translateXJR = currentPositionJR[0] + 50 - initialX;
     var translateYJR = currentPositionJR[1] - 53 - initialY;
     player.style.transform = `translate(${translateXJR}px, ${translateYJR}px)`;
@@ -303,7 +308,7 @@ function jumpRight() {
 function moveJRight() {
     isFalling = true;
     isJumping = true;
-    console.log('MJR', isOnFloor, isOnBlocks, isJumping, isFalling);
+    //console.log('MJR', isOnFloor, isOnBlocks, isJumping, isFalling);
     var currentPositionMJR = getPositionId('player');
     var translateXMJR = currentPositionMJR[0] + 9 - initialX;
     var translateYMJR = currentPositionMJR[1] - initialY;
@@ -330,7 +335,7 @@ function fallRight() {
 
 function jumpLeft() {
     if (isJumping || isFalling) {
-        console.log('cannot double jump or jump while falling');
+        //console.log('cannot double jump or jump while falling');
         return;
     }
     isJumping = true;
@@ -450,7 +455,7 @@ function getCollidingDataClassName(className) {
         mapBlocksCollidingData.forEach( (n) => {
             if ( ( (playerPosition[2] >= n[2] && playerPosition[2] <= n[3] && isMovingLeft) || (playerPosition[3] >= n[2] && playerPosition[3] <= n[3] && isMovingRight) ) 
             && ( (playerPosition[5] >= n[4] && playerPosition[5] <= n[5]) ) ) {
-              console.log('cannot move while blocked!');
+              //console.log('cannot move while blocked!');
               player.style.transform = `translate(${playerPosition[0] - initialX}px, ${playerPosition[1] - initialY}px)`
               player.style.transitionDuration = '0s';
               isFalling = false;
@@ -458,9 +463,9 @@ function getCollidingDataClassName(className) {
             }
             if ( (playerPosition[0] >= n[2] && playerPosition[0] <= n[3]) 
             &&   (playerPosition[5] >= n[4] && playerPosition[5] <= n[5])) {
-                console.log(`playerPosition is ${playerPosition}`);
-                console.log(`n is ${n}`);
-                console.log('is colliding with blocks!');
+                //console.log(`playerPosition is ${playerPosition}`);
+                //console.log(`n is ${n}`);
+                //console.log('is colliding with blocks!');
                 isOnBlocks = true;
                 isOnFloor = false;
                 isFalling = false;
@@ -475,12 +480,12 @@ function checkIfOnEdge() {
     let playerPosition = getPositionId('player');
     // check left edges
     var mapELData = getCollidingDataClassName('el');
-    console.log('YOOOOOO');
-    console.log(playerPosition);
-    console.log(mapELData);
+    //console.log('YOOOOOO');
+    //console.log(playerPosition);
+    //console.log(mapELData);
     var currentEL = 0;
     mapELData.forEach( (n) => {
-        console.log(playerPosition[3] <= n[3], playerPosition[3] >= n[2], 'or', playerPosition[2] <= n[3], playerPosition[2] >= n[2], 'or', playerPosition[0] <= n[3], playerPosition[0] >= n[3], 'and', playerPosition[5] <= n[1], playerPosition[5] >= (n[4] - 6) )
+        //console.log(playerPosition[3] <= n[3], playerPosition[3] >= n[2], 'or', playerPosition[2] <= n[3], playerPosition[2] >= n[2], 'or', playerPosition[0] <= n[3], playerPosition[0] >= n[3], 'and', playerPosition[5] <= n[1], playerPosition[5] >= (n[4] - 6) )
         if ( ( (playerPosition[3] <= n[3] && playerPosition[3] >= n[2]) || (playerPosition[2] <= n[3] && playerPosition[2] >= n[2]) || (playerPosition[0] <= n[3] && playerPosition[0] >= n[3]) ) && (playerPosition[5] <= n[1] && playerPosition[5] >= (n[4] - 6)) ) {
             currentEL = n;
             console.log(`current edge is ${currentEL}`)
@@ -491,12 +496,12 @@ function checkIfOnEdge() {
     })
     // check right edges
     var mapERData = getCollidingDataClassName('er');
-    console.log('YOOOOOO');
-    console.log(playerPosition);
-    console.log(mapERData);
+    //console.log('YOOOOOO');
+    //console.log(playerPosition);
+    //console.log(mapERData);
     var currentER = 0;
     mapERData.forEach( (n) => {
-        console.log(playerPosition[3] <= n[3], playerPosition[3] >= n[2], 'or', playerPosition[2] <= n[3], playerPosition[2] >= n[2], 'or', playerPosition[0] <= n[3], playerPosition[0] >= n[3], 'and', playerPosition[5] <= n[1], playerPosition[5] >= (n[4] - 6) )
+        //console.log(playerPosition[3] <= n[3], playerPosition[3] >= n[2], 'or', playerPosition[2] <= n[3], playerPosition[2] >= n[2], 'or', playerPosition[0] <= n[3], playerPosition[0] >= n[3], 'and', playerPosition[5] <= n[1], playerPosition[5] >= (n[4] - 6) )
         if ( ( (playerPosition[3] <= n[3] && playerPosition[3] >= n[2]) || (playerPosition[2] <= n[3] && playerPosition[2] >= n[2]) || (playerPosition[0] <= n[3] && playerPosition[0] >= n[3]) ) && (playerPosition[5] <= n[1] && playerPosition[5] >= (n[4] - 6)) ) {
             currentER = n;
             console.log(`current edge is ${currentER}`)
@@ -546,9 +551,10 @@ var checkCollision = setInterval( () => {
   isColliding();
   checkIfOnEdge();
   fallFurther();
+  changePlayer();
 }, 1);
 
-console.log('START', isOnFloor, isOnBlocks, isJumping, isFalling);
+//console.log('START', isOnFloor, isOnBlocks, isJumping, isFalling);
 
 
 
