@@ -356,7 +356,7 @@
     height: 10px;
     position: relative;
     border-radius: 25px;
-    background-image: url("../images/dim\ sum.png");
+    background-image: url("../images/dim-sum.png");
     background-size: cover;
     float: left;
     z-index: 1;
@@ -372,7 +372,7 @@
     width: 10px;
     height: 10px;
     position: relative;
-    background-image: url('../images/Japanese\ door.png');
+    background-image: url('../images/Japanese-door.png');
     background-size: cover;
     border-radius: 25px;
     float: left;
@@ -389,7 +389,7 @@
     width: 10px;
     height: 10px;
     position: relative;
-    background-image: url('../images/Japanese\ door.png');
+    background-image: url('../images/Japanese-door.png');
     background-size: cover;
     border-radius: 25px;
     float: left;
@@ -447,17 +447,17 @@
 }
 
 .not-moving {
-    background-image: url('../images/not\ moving.png');
+    background-image: url('../images/not-moving.png');
     background-size: cover;
 }
 
 .moving-right {
-    background-image: url('../images/moving\ right.png');
+    background-image: url('../images/moving-right.png');
     background-size: cover;
 }
 
 .moving-left {
-    background-image: url('../images/moving\ left.png');
+    background-image: url('../images/moving-left.png');
     background-size: cover;
 }
 
@@ -472,16 +472,16 @@
 }
 
 .jumping-right {
-    background-image: url('../images/jumping\ right.png');
+    background-image: url('../images/jumping-right.png');
     background-size: cover;
 }
 
 .jumping-left {
-    background-image: url('../images/jumping\ left.png');
+    background-image: url('../images/jumping-left.png');
     background-size: cover;
 }
 
 .dim-sum {
-    background-image: url('../images/dim\ sum\ jump.png');
+    background-image: url('../images/dim-sum-jump.png');
     background-size: cover;
 }
