@@ -145,6 +145,16 @@
     margin: 8px;
 }
 
+.command-image {
+    width: 37px;
+    height: 37px;
+}
+
+.command-image-bar {
+    width: 61px;
+    height: 17px;
+}
+
 #rules {
     background:rgb(180, 6, 6);
     display: flex;
@@ -215,6 +225,11 @@
     background: gold;
     padding: 15px;
     margin: 8px;
+}
+
+.rule-image {
+    width: 30px;
+    height: 30px;
 }
 
 #win {
