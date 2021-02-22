@@ -42,7 +42,7 @@
     height: 190px;
     left: 5px;
     top: 5px;
-    background-image: url('../images/story.jpg');
+    background:rgb(42, 204, 253);
     z-index: 60;
     padding: 0;
     margin: 0;
@@ -54,12 +54,12 @@
     font-size: 11px;
     width: 101px;
     height: 83px;
-    background:gold;
     padding: 9px;
     margin: 10px;
-    border: 2px solid rgb(180, 6, 6);
     font-weight: bolder;
-    color: rgb(180, 6, 6);
+    background: rgb(78, 185, 78);
+    border: 2px dashed white;
+    color:white;
 }
 
 #story2 {
@@ -68,26 +68,26 @@
     font-size: 11px;
     width: 101px;
     height: 83px;
-    background: rgb(180, 6, 6);
     padding: 19px;
     margin: 10px;
-    border: 2px solid gold;
     font-weight: bolder;
-    color: gold;
+    background: rgb(78, 185, 78);
+    border: 2px dashed white;
+    color:white;
 }
 
 #story3 {
     box-sizing: border-box;
-    border: 1px solid gold;
     border-radius: 25px;
     font-size: 11px;
     width: 101px;
     height: 83px;
     padding: 9px;
     margin: 10px;
-    background: rgb(180, 6, 6);
     font-weight: bolder;
-    color: gold;
+    background: rgb(78, 185, 78);
+    border: 2px dashed white;
+    color:white;
 }
 
 #story4 {
@@ -97,12 +97,12 @@
     text-align: center;
     width: 101px;
     height: 83px;
-    background: gold;
     padding: 9px;
     margin: 10px;
-    border: 2px solid rgb(180, 6, 6);
     font-weight: bolder;
-    color: rgb(180, 6, 6);
+    background: rgb(78, 185, 78);
+    border: 2px dashed white;
+    color:white;
 }
 
 #start-button {
@@ -111,8 +111,9 @@
     font-size: 14px;
     width: 101px;
     height: 83px;
-    background: gold;
-    border: 2px solid rgb(180, 6, 6);
+    background: rgb(78, 185, 78);
+    border: 2px dashed white;
+    color:white;
 }
 
 #commands {
@@ -122,27 +123,28 @@
     align-content: space-around;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    background: gold;
+    background:rgb(42, 204, 253);
+    left: 5px;
+    top: 400px;
     position: absolute;
     width: 490px;
     height: 190px;
-    left: 5px;
-    top: 200px;
     z-index: 60;
 }
 
 .command {
     box-sizing: border-box;
     border-radius: 25px;
-    border: 2px solid  rgb(180, 6, 6);
     font-weight: bolder;
-    color: rgb(180, 6, 6);
     font-size: 14px;
     width: 101px;
     height: 83px;
-    background: gold;
     padding: 15px;
     margin: 8px;
+    background: rgb(78, 185, 78);
+    border: 2px dashed white;
+    color:white;
+    
 }
 
 .command-image {
@@ -156,7 +158,7 @@
 }
 
 #rules {
-    background:rgb(180, 6, 6);
+    background:rgb(42, 204, 253);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -167,69 +169,71 @@
     width: 490px;
     height: 190px;
     left: 5px;
-    top: 400px;
+    top: 200px;
     z-index: 60;
 }
 
 #platform {
     box-sizing: border-box;
     border-radius: 25px;
-    border: 2px solid  rgb(180, 6, 6);
     font-weight: bolder;
-    color: rgb(180, 6, 6);
     font-size: 14px;
     width: 150px;
     height: 83px;
-    background: gold;
     padding: 15px;
     margin: 8px;
+    background: rgb(78, 185, 78);
+    border: 2px dashed white;
+    color:white;
 }
 
 #yellow-cloud {
     box-sizing: border-box;
     border-radius: 25px;
-    border: 2px solid  rgb(180, 6, 6);
     font-weight: bolder;
-    color: rgb(180, 6, 6);
     font-size: 14px;
     width: 150px;
     height: 83px;
-    background: gold;
     padding: 15px;
     margin: 8px;
+    background: rgb(78, 185, 78);
+    border: 2px dashed white;
+    color:white;
 }
 
 #japanese-window {
     box-sizing: border-box;
     border-radius: 25px;
-    border: 2px solid  rgb(180, 6, 6);
     font-weight: bolder;
-    color: rgb(180, 6, 6);
     font-size: 14px;
     width: 150px;
     height: 83px;
-    background: gold;
     padding: 15px;
     margin: 8px;
+    background: rgb(78, 185, 78);
+    border: 2px dashed white;
+    color:white;
 }
 
 #dim-treat {
     box-sizing: border-box;
     border-radius: 25px;
-    border: 2px solid  rgb(180, 6, 6);
     font-weight: bolder;
-    color: rgb(180, 6, 6);
     font-size: 14px;
     width: 150px;
     height: 83px;
-    background: gold;
     padding: 15px;
     margin: 8px;
+    background: rgb(78, 185, 78);
+    border: 2px dashed white;
+    color:white;
 }
 
 .rule-image {
     width: 30px;
     height: 30px;
+    margin: 3px;
+    padding: 3px;
 }
 
 #win {
