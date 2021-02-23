@@ -35,7 +35,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-content: space-around;
+    align-content: space-between;
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-content: center;
@@ -51,7 +51,7 @@
     margin: 0;
 }
 
-#story1 {
+.stories {
     box-sizing: border-box;
     border-radius: 25px;
     font-size: 14px;
@@ -63,49 +63,8 @@
     background: rgb(78, 185, 78);
     border: 2px dashed white;
     color:white;
-}
-
-#story2 {
-    box-sizing: border-box;
-    border-radius: 25px;
-    font-size: 14px;
-    width: 151px;
-    height: 83px;
-    padding: 19px;
-    margin: 10px;
-    font-weight: bolder;
-    background: rgb(78, 185, 78);
-    border: 2px dashed white;
-    color:white;
-}
-
-#story3 {
-    box-sizing: border-box;
-    border-radius: 25px;
-    font-size: 14px;
-    width: 151px;
-    height: 83px;
-    padding: 9px;
-    margin: 10px;
-    font-weight: bolder;
-    background: rgb(78, 185, 78);
-    border: 2px dashed white;
-    color:white;
-}
-
-#story4 {
-    box-sizing: border-box;
-    border-radius: 25px;
-    font-size: 14px;
     text-align: center;
-    width: 151px;
-    height: 83px;
-    padding: 9px;
-    margin: 10px;
-    font-weight: bolder;
-    background: rgb(78, 185, 78);
-    border: 2px dashed white;
-    color:white;
+    vertical-align: middle;
 }
 
 #rules {
@@ -113,7 +72,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-content: space-around;
+    align-content: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
     box-sizing: border-box;
@@ -125,11 +84,37 @@
     z-index: 60;
 }
 
+.rule {
+    box-sizing: border-box;
+    border-radius: 25px;
+    font-weight: bolder;
+    font-size: 14px;
+    width: 151px;
+    height: 83px;
+    padding: 9px;
+    margin: 10px;
+    background: rgb(78, 185, 78);
+    border: 2px dashed white;
+    color:white;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+
+.rule-image {
+    width: 23px;
+    height: 23px;
+    margin: 5px;
+    bottom: 0px;
+    left: 59.5px;
+    position: absolute;
+}
+
 #commands {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    align-content: space-around;
+    align-content: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
     background:rgb(42, 204, 253);
@@ -148,8 +133,8 @@
     font-size: 14px;
     width: 151px;
     height: 157px;
-    padding: 15px;
-    margin: 8px;
+    padding: 9px;
+    margin: 10px;
     background: rgb(78, 185, 78);
     border: 2px dashed white;
     color:white;
@@ -160,74 +145,14 @@
     box-sizing: border-box;
     border-radius: 25px;
     font-size: 14px;
-    width: 101px;
+    width: 151px;
     height: 157px;
     background: rgb(78, 185, 78);
     border: 2px dashed white;
     color:white;
-}
-
-#platform {
-    box-sizing: border-box;
-    border-radius: 25px;
-    font-weight: bolder;
-    font-size: 14px;
-    width: 150px;
-    height: 83px;
-    padding: 15px;
-    margin: 8px;
-    background: rgb(78, 185, 78);
-    border: 2px dashed white;
-    color:white;
-}
-
-#yellow-cloud {
-    box-sizing: border-box;
-    border-radius: 25px;
-    font-weight: bolder;
-    font-size: 14px;
-    width: 150px;
-    height: 83px;
-    padding: 15px;
-    margin: 8px;
-    background: rgb(78, 185, 78);
-    border: 2px dashed white;
-    color:white;
-}
-
-#japanese-window {
-    box-sizing: border-box;
-    border-radius: 25px;
-    font-weight: bolder;
-    font-size: 14px;
-    width: 150px;
-    height: 83px;
-    padding: 15px;
-    margin: 8px;
-    background: rgb(78, 185, 78);
-    border: 2px dashed white;
-    color:white;
-}
-
-#dim-treat {
-    box-sizing: border-box;
-    border-radius: 25px;
-    font-weight: bolder;
-    font-size: 14px;
-    width: 150px;
-    height: 83px;
-    padding: 15px;
-    margin: 8px;
-    background: rgb(78, 185, 78);
-    border: 2px dashed white;
-    color:white;
-}
-
-.rule-image {
-    width: 30px;
-    height: 30px;
-    margin: 3px;
-    padding: 3px;
+    padding: 9px;
+    margin: 10px;
+    cursor: pointer;
 }
 
 #win {
@@ -466,16 +391,6 @@
 
 .jumping {
     background-image: url('../images/jumping.png');
-    background-size: cover;
-}
-
-.jumping-right {
-    background-image: url('../images/jumpingright.png');
-    background-size: cover;
-}
-
-.jumping-left {
-    background-image: url('../images/jumpingleft.png');
     background-size: cover;
 }
 
